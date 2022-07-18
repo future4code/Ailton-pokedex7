@@ -1,9 +1,11 @@
-
+import Header from "../../components/Header";
+import Cards from '../../components/Cards/Cards'
 
 export default function HomePage() {
-return(
+  return (
     <div>
-        <p>Home Page</p>
+      <Header page={"home"} />
+      <Cards />
     </div>
-)
+  );
 }
