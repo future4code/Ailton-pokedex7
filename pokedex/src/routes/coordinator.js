@@ -3,8 +3,8 @@
 export const goToHomePage = (navigate) => {
     navigate("/")
 };
-export const goToDetailPage = (navigate, id) => {
-    navigate("/detailPage/"+id)
+export const goToDetailPage = (navigate) => {
+    navigate("/detailPage")
 };
 export const goToPokedex = (navigate) => {
     navigate("/pokedex")

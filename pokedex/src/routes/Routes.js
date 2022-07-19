@@ -11,7 +11,7 @@ export const Router = () => {
         <Routes>
         <Route index
         element = {<Home />} />
-        <Route path= "/detailPage/:id"
+        <Route path= "/detailPage"
         element = {<DetailPage />} />
         <Route path="/pokedex"
         element = {<Pokedex />} />
