@@ -21,6 +21,9 @@ margin-top: 25px;
 display: flex;
 flex-direction: column;
 align-items: center;
+font-family: Pokemon Hollow, serif;
+
+
 `;
 export const ButtonsContainer = styled.div`
 margin-top: 25px;

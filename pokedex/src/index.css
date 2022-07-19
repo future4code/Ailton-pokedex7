@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif, 'Pokemon Hollow', 'Pokemon Solid';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +10,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Pokemon Hollow';
+  src: local('Pokemon Hollow'), url('./assets/fonts/Pokemon-Hollow.ttf') format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Pokemon Solid';
+  src: local('Pokemon-Solid'), url('./assets/fonts/Pokemon-Solid.ttf') format('truetype');
 }
