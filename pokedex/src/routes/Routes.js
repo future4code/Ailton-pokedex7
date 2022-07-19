@@ -15,7 +15,7 @@ export const Router = () => {
         element = {<DetailPage />} />
         <Route path="/pokedex"
         element = {<Pokedex />} />
-        <Route path="/errorPage"
+        <Route path="*"
         element = {<ErrorPage />} />
         </Routes>
         </BrowserRouter>

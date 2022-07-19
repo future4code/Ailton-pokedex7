@@ -1,51 +1,60 @@
 import { goToDetailPage } from "../../routes/coordinator";
 import Eevee from "../../assets/img/eevee.png";
-import { GetPokeList } from "../../services/request";
+import { useGetPokeList } from "../../services/request";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
   CardContainer,
   PokemonsImg,
   PokeInfo,
   ButtonsContainer,
 } from "./Styled";
+import axios from "axios";
 
 function Cards() {
   const navigate = useNavigate();
-  const [data, isLoading, error] = GetPokeList(
+  let pokeName = [""];
+  const [dataType, setDataType] = useState([])
+  const [data, isLoading, error] = useGetPokeList(
     `https://labe-pokedex.herokuapp.com/pokemon/list?limit=20&offset=0`
   );
-  let pokeName = [];
   const AddToPokedex = () => {
     console.log("Capturado!!!");
   };
 
-  const pokemonList = data?.map((poke) => {
-    return poke;
+  const pokemonList = dataType?.map((poke) => {
+    return `<span>tipo: ${poke}</span>`;
   });
-
-  const [datat, isLoadingt, errort] = GetPokeList(
-    `https://pokeapi.co/api/v2/pokemon/${pokeName}`
-  );
-
-  const pokemonType = datat?.types?.map((poke) => {
-    return poke.type.name;
-  });
+  
+   const pokemonType = () => {
+     axios
+     .get(`https://pokeapi.co/api/v2/pokemon/${data.name}`)
+     .then((response) => {
+       setDataType(response.data.types)
+      //  console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+    };
+    
+    // {pokemonType()}
+  
 
   return (
     <>
       {data?.map((poke) => {
         return (
           <CardContainer>
-            {console.log(poke.name)}
+            <span>133</span>
             <PokemonsImg
               src={`https://professorlotus.com/Sprites/${poke.name}.gif`}
               alt="Eevee"
               onClick={() => goToDetailPage(navigate)}
             />
             <PokeInfo>
-              <span>Name: {poke.name}</span>
-              <span>Number: 0133</span>
-              <span>Tipo: {pokemonType}</span>
+              <h2>{poke.name}</h2>
+              <p>Tipo: {pokemonList}</p>
             </PokeInfo>
             <ButtonsContainer>
               <button onClick={() => goToDetailPage(navigate)}>Detalhes</button>
