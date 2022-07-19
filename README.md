@@ -9,7 +9,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 
 <h3 align="center"> 
 
-[🔗Link Surge](#link-surge) | [📚Bibliotecas](#bibliotecas-utilizadas) | [💻Projeto](como-rodar-o-projeto-localmente) |
+[🔗Surge](#link-surge) | [📚Bibliotecas](#bibliotecas-utilizadas) | [💻Projeto](como-rodar-o-projeto-localmente) |
 [🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedoras](#imagens) | [🖥️📱Imagens](#imagens) 
 
 <h3/>
