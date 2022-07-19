@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderCont = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 20%;
+  height: 20vh;
   align-items: center;
 `;
 
@@ -13,7 +13,8 @@ export const Logo = styled.img`
 `;
 
 export const Closed = styled.img`
-  width: 200px;
+  width: 120px;
+  margin-top: -30px;
 `;
 
 export const Open = styled.img`

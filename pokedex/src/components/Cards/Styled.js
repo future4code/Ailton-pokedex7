@@ -15,6 +15,12 @@ flex-direction: column;
 align-items: center;
 padding-top: 10px;
 line-height: 20px;
+
+span{
+    font-family: Pokemon Hollow, serif;
+    font-weight: 900;
+    font-size: 40px;
+}
 ` 
 export const PokeInfo = styled.div`
 margin-top: 25px;

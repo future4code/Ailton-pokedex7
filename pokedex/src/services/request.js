@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 
-export const GetPokeList = (url) => {
+export const useGetPokeList = (url) => {
   const [data, setData] = useState(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
