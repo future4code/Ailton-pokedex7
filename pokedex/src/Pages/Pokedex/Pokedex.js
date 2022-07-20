@@ -1,7 +1,9 @@
 import Header from "../../components/Header"
 import Pichu from "../../assets/img/pichu.gif"
 import styled from "styled-components";
-
+import GlobalContext from "../../components/Global/GlobalContext";
+import { useContext, useState } from "react";
+import Card from "../../components/Cards/Cards";
 
 const Container = styled.div`
   margin: auto;
@@ -19,11 +21,14 @@ const Msg = styled.h1`
   `
 
 export default function Pokedex() {
+  const {pokemon, setPokemon, pokedex, setPokedex} = useContext(GlobalContext)
+
     return(
         <div>
             <Header page = {'pokedex'}/>
+            <Card/>
             <Container>
-                <img src={Pichu} alt="charmander error" />
+                <img src={Pichu} alt="pichu" />
             <Msg>Sua Pokedex está vazia</Msg>
              </Container>
         </div>
