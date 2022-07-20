@@ -1,11 +1,12 @@
 import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import PokeOpen from "../../assets/img/pokeOpen.png"
-import React, { useEffect } from 'react'
-import { BASE_URL } from '../../constants/url'
+import PokeOpen from "../../assets/img/pokeOpen.png";
+import PokeClose from "../../assets/img/pokeClose.png";
+import React, { useEffect } from "react";
+
 import PokemonTypes from "../PokeTypes/PokeTypes";
-import  GlobalContext  from "../Global/GlobalContext";
+import GlobalContext from "../Global/GlobalContext";
 import {
   CardContainer,
   Container,
@@ -15,45 +16,80 @@ import {
   ButtonsContainer,
 } from "./Styled";
 
-    function Card() {
-      const navigate = useNavigate()
+function Card() {
+  const navigate = useNavigate();
+  const pokedexLocal = localStorage.getItem("pokedex");
 
-      const {pokemon, setPokemon, pokedex, setPokedex} = useContext(GlobalContext)
-   
-      const addToPokedex = (newToPokedex) => {
-         const pokedexList = [...pokedex, newToPokedex];
-         setPokedex(pokedexList);
-         window.alert("Sucesso!, Pokemon adicionado na sua Pokedex");
-       };
-      
-      const pokemons = pokemon?.map((pokemon, index) => {
-         return (
-            <CardContainer key={index}>
-            <span>00{pokemon.id}</span>
-            <PokemonsImg
-              src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
-              alt="Eevee"
-              onClick={() => goToDetailPage(navigate)}
-            />
-              <Name>{pokemon.name}</Name>
-              <Type>
-               <p>{pokemon.types[0].type.name}</p>
-             <p>{pokemon.types[1]?.type.name}</p>
-             </Type>
-            <ButtonsContainer>
-              <img onClick={() => addToPokedex(pokemon)} src={PokeOpen} alt={"Capiturar"}/>
-            </ButtonsContainer>
-          </CardContainer>
-         )
-       })
+  const { pokemon, setPokemon, pokedex, setPokedex } =
+    useContext(GlobalContext);
 
-       
-  
-  return (
-      <Container>
-        {pokemons}
-      </Container>
-  );
+  useEffect(() => {
+    setPokedex(JSON.parse(pokedexLocal));
+  }, []);
+
+  const addToPokedex = (newToPokedex) => {
+    const pokedexList = [...pokedex, newToPokedex];
+    window.alert("PokeName, eu escolho você!");
+    window.location.reload()
+
+    const pokedexLocal = localStorage.getItem("pokedex");
+    if (pokedexLocal) {
+      const updatedPokedex = [...JSON.parse(pokedexLocal), newToPokedex];
+      localStorage.setItem("pokedex", JSON.stringify(updatedPokedex));
+    } else {
+      localStorage.setItem("pokedex", JSON.stringify([newToPokedex]));
+    }
+  };
+
+  const pokemons = pokemon?.map((pokemon, index) => {
+    const status = () => {
+      const index = pokedex?.findIndex((item) => {
+        const teste = item.name === pokemon.name;
+        return teste;
+      });
+      return index > -1;
     };
 
-export default Card
+    return (
+      <CardContainer key={index}>
+        <span>
+          {pokemon.id < 10
+            ? "00" + pokemon.id
+            : pokemon.id >= 10 && pokemon.id < 100
+            ? "0" + pokemon.id
+            : pokemon.id}
+        </span>
+        <PokemonsImg
+          //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
+          alt={pokemon.name}
+          onClick={() => goToDetailPage(navigate, pokemon.id)}
+        />
+        <Name>{pokemon.name}</Name>
+        <Type>
+          <p>{pokemon.types[0].type.name}</p>
+          <p>{pokemon.types[1]?.type.name}</p>
+        </Type>
+        <ButtonsContainer>
+          {status() ? (
+            <img
+              src={PokeClose}
+              alt={"Capiturar"}
+              onClick={() => alert("Já está na pokedex!")}
+            />
+          ) : (
+            <img
+              onClick={() => (addToPokedex(pokemon))}
+              src={PokeOpen}
+              alt={"Capiturar"}
+            />
+          )}
+        </ButtonsContainer>
+      </CardContainer>
+    );
+  });
+
+  return <Container>{pokemons}</Container>;
+}
+
+export default Card;

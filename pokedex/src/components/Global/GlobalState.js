@@ -8,7 +8,6 @@ const GlobalState = (props) => {
     const [pokemon, setPokemon] = useState()
     const [pokedex, setPokedex] = useState([])
 
-
       useEffect(() => {
          Pokemonlist()
       }, [])
