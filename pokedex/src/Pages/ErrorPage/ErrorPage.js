@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Charmander from "../../assets/img/charmander.gif"
+import Charmander from "../../assets/img/tsts.gif"
 import styled from "styled-components";
 
 const Container = styled.div `
