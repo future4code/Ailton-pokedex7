@@ -34,6 +34,7 @@ const Container = styled.div``;
 export default function DetailPage() {
   const params = useParams();
   const [details, setDetails] = useState();
+  const [isAdded, setIsAdded] = useState(false);
   const { pokemon, setPokemon, pokedex, setPokedex, isLoading, setIsLoading } =
     useContext(GlobalContext);
 
@@ -55,7 +56,7 @@ export default function DetailPage() {
 
   const addToPokedex = (newToPokedex) => {
     window.alert("PokeName, eu escolho você!");
-    window.location.reload()
+    // window.location.reload()
 
     const pokedexLocal = localStorage.getItem("pokedex");
     if (pokedexLocal) {
@@ -64,6 +65,7 @@ export default function DetailPage() {
     } else {
       localStorage.setItem("pokedex", JSON.stringify([newToPokedex]));
     }
+    status()
   };
     
       const status = () => {
@@ -71,10 +73,10 @@ export default function DetailPage() {
           return item.name === details.name;
           
         });
-        console.log(status)
-        return index > -1;
+        setIsAdded(index);
       };
       
+     
 
   return (
     <Container>
@@ -115,7 +117,7 @@ export default function DetailPage() {
       <TipeImg src={typesIcons[details?.types[1]?.type?.name]} />
       </Type>
       <ButtonsContainer>
-      {status() ? (
+      {isAdded ? (
         <img className="pokeClose"
           src={PokeClose}
           alt={"Capiturar"}

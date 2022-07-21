@@ -8,6 +8,15 @@ import LoadingImg from "../../assets/img/loading.gif";
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  /* display: flex; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
 
   @media screen and (max-width: 640px) {
     display: flex;
@@ -34,10 +43,12 @@ const Loading = styled.div`
 
 export default function HomePage() {
   const { pokemon, setPokemon, isLoading, setIsLoading } = useContext(GlobalContext);
-
+  const pokemons = pokemon?.map((pokemon, index) => 
+    <Cards page="home" pokemon={pokemon}/> 
+  )
   const showPokelist = pokemon && !isLoading ? (
     <Container> 
-      <Cards page="home"/> 
+      {pokemons}
       </Container>
   ) : ( 
   <Loading>

@@ -12,7 +12,7 @@ const GlobalState = (props) => {
   useEffect (() => {
     setIsLoading(true);
    axios
-    .get(`${BASE_URL}pokemon?limit=100&offset=${pagination}`)
+    .get(`${BASE_URL}pokemon?limit=10&offset=${pagination}`)
     .then((response) => {
       setIsLoading(false);
       pokemonList(response.data.results)
