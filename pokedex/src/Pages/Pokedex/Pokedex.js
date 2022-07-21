@@ -6,12 +6,14 @@ import Card from "../../components/Cards/Cards";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
 import { useContext, useEffect, useState } from "react";
+import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons"
 import {
   CardContainer,
   Container,
   PokemonsImg,
   Name,
   Type,
+  TipeImg,
   Msg,
   ButtonsContainer,
 } from "./Styled";
@@ -54,8 +56,8 @@ export default function Pokedex() {
         />
         <Name>{item.name}</Name>
         <Type>
-          <p>{item.types[0].type.name}</p>
-          <p>{item.types[1]?.type.name}</p>
+          <TipeImg src={typesIcons[item.types[0].type.name]} />
+          <TipeImg src={typesIcons[item.types[1]?.type.name]} />
         </Type>
         <ButtonsContainer>
           <img
