@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 #root, body {
-  min-height: 100vh;
-  max-width: 100vw;
+  min-height: 100%;
+  max-width: 100%;
 }
 #root{
   display:flex;

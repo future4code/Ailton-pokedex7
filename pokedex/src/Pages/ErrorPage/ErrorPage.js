@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Charmander from "../../assets/img/tsts.gif"
+import Charmander from "../../assets/img/charmander.gif"
 import styled from "styled-components";
 
 const Container = styled.div `
@@ -9,6 +9,7 @@ const Container = styled.div `
   justify-content: center;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 `
 
 const DivButton = styled.div`
@@ -25,7 +26,7 @@ const DivButton = styled.div`
   }
 `;
 const Error = styled.h1`
-  margin-top: -30px;
+  margin-top: -150px;
   font-size: 42px;
   text-align: center;
   text-shadow: 2px 2px black;
