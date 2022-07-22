@@ -1,20 +1,45 @@
 import styled from "styled-components";
 import CardImg from "../../assets/cards/orange.png";
+import { cards } from "../../components/PokeTypes/PokeTypesCards"; 
 
 export const PokemonsImg = styled.img`
   width: 240px;
 `;
 
-export const Container = styled.div`
-  margin: 0 auto;
+export const PichuContainer = styled.div`
+margin: 0 auto;
   width: 400px;
   justify-content: center;
   display: flex;
   flex-direction: column;
+`
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 820px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const CardContainer = styled.div`
-  background-image: url(${CardImg});
+  /* background-image: url(${CardImg}); */
+  background-image: url(${props => cards[props.type]});
   background-repeat: no-repeat;
   background-size: 100%;
   width: 320px;
@@ -53,7 +78,7 @@ export const Type = styled.div`
   display: flex;
   margin-top: 10px;
 `;
-export const TipeImg = styled.img`
+export const TypeImg = styled.img`
   margin-top: 30px;
   height: 40px;
 `;

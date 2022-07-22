@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CardImg from "../../assets/cards/blue.png";
+import { cards } from "../PokeTypes/PokeTypesCards"; 
 
 export const Container = styled.div`
   display: flex;
@@ -24,7 +25,7 @@ img {
 `;
 
 export const CardContainer = styled.div`
-  background-image: url(${CardImg});
+  background-image: url(${props => cards[props.type]});
   background-repeat: no-repeat;
   background-size: 100%;
   width: 320px;
@@ -65,7 +66,7 @@ export const Type = styled.div`
   display: flex;
   margin-top: 10px;
 `;
-export const TipeImg = styled.img`
+export const TypeImg = styled.img`
   margin-top: 30px;
   height: 40px;
 `;

@@ -41,25 +41,29 @@ const Loading = styled.div`
   }
 `;
 
+
 export default function HomePage() {
   const { pokemon, setPokemon, isLoading, setIsLoading } = useContext(GlobalContext);
-  const pokemons = pokemon?.map((pokemon, index) => 
-    <Cards page="home" pokemon={pokemon}/> 
-  )
-  const showPokelist = pokemon && !isLoading ? (
-    <Container> 
-      {pokemons}
-      </Container>
-  ) : ( 
-  <Loading>
-    <img src={LoadingImg} alt="Loading" />
-  </Loading>
-  )
+  const pokemonsNew = localStorage.getItem("pokemons")
+  const newPokers = JSON.parse(pokemonsNew)
 
+  let pokemonsMapped
+  if(pokemonsNew !== null){
+    pokemonsMapped = newPokers?.map((pokemon) => {
+      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />
+    })
+  } else {
+    pokemonsMapped = pokemon?.map((pokemon) => {
+      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />
+    })
+  }
   return (
     <div>
-      <Header page="home" />
-        {showPokelist}
+      <Header page={"home"} />
+     
+    <Container>
+      {pokemonsMapped}
+    </Container>
+     
     </div>
-  );
-}
+  )}

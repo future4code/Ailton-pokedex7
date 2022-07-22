@@ -9,10 +9,11 @@ const GlobalState = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [pagination, setPagination] = useState(0)
 
+
   useEffect (() => {
     setIsLoading(true);
    axios
-    .get(`${BASE_URL}pokemon?limit=10&offset=${pagination}`)
+    .get(`${BASE_URL}pokemon?limit=10offset=0`)
     .then((response) => {
       setIsLoading(false);
       pokemonList(response.data.results)
@@ -20,7 +21,7 @@ const GlobalState = (props) => {
    console.log(error.response.message)
   })
   setIsLoading(false);
-}, [pagination]);
+}, [pokedex, pagination]);
 
 const pokemonList = async (data) => {
         setIsLoading(true);
@@ -42,8 +43,14 @@ const pokemonList = async (data) => {
          }
       })
    )
-   setPokemon (pokeInfo)
+   const verificaPokemons = localStorage.getItem('pokemons')
+   if (!verificaPokemons){
+     setPokemon(pokeInfo)
+     console.log(pokeInfo)
+     localStorage.setItem("pokemons", JSON.stringify(pokeInfo))
+   }
 }
+
   return (
    
     <GlobalContext.Provider
