@@ -31,7 +31,7 @@ const Loading = styled.div`
   }
 `;
 export const PokeImg = styled.img`
-  width: 100px;
+  width: 110px;
   padding: -100px;
 `;
 export const CardLeft = styled.div`
@@ -46,11 +46,14 @@ export const CardLeft = styled.div`
   margin-top: 3.2%;
   transition: all 1s ease 0s;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  display: flex;
   flex-direction: column;
-  text-align: justify;
+  align-items: center;
+  padding: 2% 5%;
+  justify-content: space-around;
+
+  li{
+    list-style: none;
+  }
 
   &:hover {
     transform: perspective(350px) rotateY(0deg);
@@ -98,7 +101,8 @@ export const CardRight = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 2% 5%;
+  justify-content: space-around;
 
   &:hover {
     transform: perspective(350px) rotateY(0deg);
@@ -107,93 +111,25 @@ export const CardRight = styled.div`
 `;
 export const ProgressBarOut = styled.div`
   width: 240px;
-  height: 20px;
+  height: 80%;
   background-color: #ccc;
+  display: flex;
+  align-content: center;
+  border-radius: 5px;
 `;
 export const ProgressBar0 = styled.div`
-  height: 18px;
+  height: 60%;
   background-color: #ffcb04;
   width: 0px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: center;
   transition: 5s ease 0.1s;
-`;
-export const ProgressBar1 = styled.div`
-  position: absolute;
-  height: 8px;
-  background-color: gold;
-  animation: progress-animation1 5s infinite;
-
-  @keyframes progress-animation1 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: ${({ bar }) => bar}%;
-    }
-  }
-`;
-export const ProgressBar2 = styled.div`
-  position: absolute;
-  height: 8px;
-  background-color: gold;
-  animation: progress-animation2 5s infinite;
-
-  @keyframes progress-animation2 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: ${({ bar }) => bar}%;
-    }
-  }
-`;
-export const ProgressBar3 = styled.div`
-  position: absolute;
-  height: 8px;
-  background-color: gold;
-  animation: progress-animation3 5s infinite;
-
-  @keyframes progress-animation3 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: ${({ bar }) => bar}%;
-    }
-  }
-`;
-export const ProgressBar4 = styled.div`
-  position: absolute;
-  height: 8px;
-  background-color: gold;
-  animation: progress-animation4 5s infinite;
-
-  @keyframes progress-animation4 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: ${({ bar }) => bar}%;
-    }
-  }
-`;
-export const ProgressBar5 = styled.div`
-  position: absolute;
-  height: 8px;
-  background-color: gold;
-  animation: progress-animation5 5s infinite;
-
-  @keyframes progress-animation5 {
-    0% {
-      width: 0%;
-    }
-    100% {
-      width: ${({ bar }) => bar}%;
-    }
-  }
+  border-radius: 5px;
 `;
 export const Stats = styled.div`
   display: flex;
 `;
+export const ContainerImages = styled.div`
+display: flex;
+`
