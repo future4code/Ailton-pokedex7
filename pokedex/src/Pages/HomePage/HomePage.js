@@ -40,30 +40,30 @@ const Loading = styled.div`
     height: 331.42px;
   }
 `;
-
-
 export default function HomePage() {
-  const { pokemon, setPokemon, isLoading, setIsLoading } = useContext(GlobalContext);
-  const pokemonsNew = localStorage.getItem("pokemons")
-  const newPokers = JSON.parse(pokemonsNew)
+  const { pokemon, setPokemon, isLoading, setIsLoading } =
+    useContext(GlobalContext);
+  const pokemonsNew = localStorage.getItem("pokemons");
+  const newPokers = JSON.parse(pokemonsNew);
 
-  let pokemonsMapped
-  if(pokemonsNew !== null){
+  let pokemonsMapped;
+  if (pokemonsNew !== null) {
     pokemonsMapped = newPokers?.map((pokemon) => {
-      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />
-    })
+      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />;
+    });
   } else {
     pokemonsMapped = pokemon?.map((pokemon) => {
-      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />
-    })
+      return <Cards key={pokemon.id} page={"home"} pokemon={pokemon} />;
+    });
   }
   return (
     <div>
       <Header page={"home"} />
-     
-    <Container>
-      {pokemonsMapped}
-    </Container>
-     
+
+        <Loading>
+          <img src={LoadingImg} alt="loading" />
+        </Loading>
+     {/*  {pokemon && isLoading  */} <Container>{pokemonsMapped}</Container>
     </div>
-  )}
+  );
+}
