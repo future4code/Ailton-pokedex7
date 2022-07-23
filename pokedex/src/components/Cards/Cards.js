@@ -8,7 +8,6 @@ import GlobalContext from "../Global/GlobalContext";
 import { typesIcons } from "../PokeTypes/PokemonTypeIcons";
 import {
   CardContainer,
-  Container,
   PokemonsImg,
   Name,
   Type,
@@ -29,7 +28,7 @@ function Card({ pokemon }) {
 
   const addToPokedex = (newToPokedex) => {
     // newToPokedex.onPokedex = true;
-    window.alert("PokeName, eu escolho você!");
+    window.alert(`${newToPokedex.name}, eu escolho você!`);
 
     const pokedexLocal = localStorage.getItem("pokedex");
     if (!!pokedexLocal) {
@@ -49,7 +48,7 @@ function Card({ pokemon }) {
     }
   };
 
-  const ListPokedex = pokedex.map((item) => {
+  const ListPokedex = pokedex?.map((item) => {
     return item.name;
   });
 

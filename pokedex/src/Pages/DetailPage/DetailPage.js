@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { DetailContainer, CardLeft, CardCenter, CardRight } from "./styled";
+import { DetailContainer, CardLeft, CardCenter, CardRight, ContainerImages, PokeImg } from "./styled";
 import Header from "../../components/Header";
 import styled from "styled-components";
 import { BASE_URL } from "../../constants/url";
@@ -11,7 +11,6 @@ import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
 import { Progress } from "./ProgressBar";
-import { PokeImg } from "./styled";
 import {
   PokemonsImg,
   Name,
@@ -88,7 +87,7 @@ export default function DetailPage() {
             <strong>Peso:</strong> {details?.weight - 0.1}Kg
           </p>
 
-          <div>
+          <ContainerImages>
             <PokeImg
               //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
               src={
@@ -110,7 +109,7 @@ export default function DetailPage() {
               alt={details?.name}
               //   onClick={() => goToDetailPage(navigate, details?.id)}
             />
-          </div>
+          </ContainerImages>
         </CardLeft>
         <CardCenter type={details?.types[0]?.type?.name}>
           <span>
@@ -153,11 +152,11 @@ export default function DetailPage() {
           <h3>Base stats:</h3>
           {/* {details?.stats[0].stat.name}: {details?.stats[0].base_stat} */}
           <div>HP: {<Progress bar={(details?.stats[0].base_stat)*(100/230)} />}</div>
-          <div>Attack: {<Progress bar={details?.stats[1].base_stat} />}</div>
-          <div>Defense: {<Progress bar={details?.stats[2].base_stat} />}</div>
-          <div>SP Attack: {<Progress bar={details?.stats[3].base_stat} />}</div>
-          <div>SP Defense: {<Progress bar={details?.stats[4].base_stat} />}</div>
-          <div>Speed: {<Progress bar={details?.stats[5].base_stat} />}</div>
+          <div>Attack: {<Progress bar={(details?.stats[1].base_stat)*(100/230)} />}</div>
+          <div>Defense: {<Progress bar={(details?.stats[2].base_stat)*(100/230)} />}</div>
+          <div>SP Attack: {<Progress bar={(details?.stats[3].base_stat)*(100/230)} />}</div>
+          <div>SP Defense: {<Progress bar={(details?.stats[4].base_stat)*(100/230)} />}</div>
+          <div>Speed: {<Progress bar={(details?.stats[5].base_stat)*(100/230)} />}</div>
         </CardRight>
       </DetailContainer>
     </Container>

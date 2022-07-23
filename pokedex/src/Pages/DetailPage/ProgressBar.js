@@ -14,7 +14,7 @@ export const Progress = ({ bar }) => {
 
   return (
     <ProgressBarOut>
-      <ProgressBar0 style={style}>{bar*(230/100)}</ProgressBar0>
+      <ProgressBar0 style={style}>{parseInt(bar*(230/100))}</ProgressBar0>
     </ProgressBarOut>
   );
 };
