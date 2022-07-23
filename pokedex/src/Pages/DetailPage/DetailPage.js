@@ -10,17 +10,8 @@ import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
 import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
-import {
-  Stats,
-  ProgressBar0,
-  ProgressBar1,
-  ProgressBar2,
-  ProgressBar3,
-  ProgressBar4,
-  ProgressBar5,
-  ProgressBarOut,
-  PokeImg,
-} from "./styled";
+import { Progress } from "./ProgressBar";
+import { PokeImg } from "./styled";
 import {
   PokemonsImg,
   Name,
@@ -81,39 +72,44 @@ export default function DetailPage() {
         <CardLeft type={details?.types[0]?.type?.name}>
           <h3>Moves:</h3>
           <ul>
-          <li>{details?.moves[0].move.name}</li>
-          <li>{details?.moves[1].move.name}</li>
-          <li>{details?.moves[2].move.name}</li>
-          <li>{details?.moves[3].move.name}</li>
-          <li>{details?.moves[4].move.name}</li>
-          <li>{details?.moves[5].move.name}</li>
+            <li>{details?.moves[0].move.name}</li>
+            <li>{details?.moves[1].move.name}</li>
+            <li>{details?.moves[2].move.name}</li>
+            <li>{details?.moves[3].move.name}</li>
+            <li>{details?.moves[4].move.name}</li>
+            <li>{details?.moves[5].move.name}</li>
           </ul>
-          <br/>
-          <p><strong>Altura: </strong>{(details?.height * 0.1).toFixed(2)}M</p>
-          <p><strong>Peso:</strong> {details?.weight - 0.1}Kg</p>
-          
-          <div>
-          <PokeImg
-            //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
-            src={
-              !details?.sprites?.front_shiny
-                ? details?.sprites?.front_default
-                : details?.sprites?.front_shiny
-            }
-            alt={details?.name}
-            //   onClick={() => goToDetailPage(navigate, details?.id)}
-          />
+          <br />
+          <p>
+            <strong>Altura: </strong>
+            {(details?.height * 0.1).toFixed(2)}M
+          </p>
+          <p>
+            <strong>Peso:</strong> {details?.weight - 0.1}Kg
+          </p>
 
-          <PokeImg
-            //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
-            src={
-              details?.sprites?.back_shiny
-                ? details?.sprites?.back_shiny
-                : details?.sprites?.back_default
-            }
-            alt={details?.name}
-            //   onClick={() => goToDetailPage(navigate, details?.id)}
-          />
+          <div>
+            <PokeImg
+              //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
+              src={
+                !details?.sprites?.front_shiny
+                  ? details?.sprites?.front_default
+                  : details?.sprites?.front_shiny
+              }
+              alt={details?.name}
+              //   onClick={() => goToDetailPage(navigate, details?.id)}
+            />
+
+            <PokeImg
+              //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
+              src={
+                details?.sprites?.back_shiny
+                  ? details?.sprites?.back_shiny
+                  : details?.sprites?.back_default
+              }
+              alt={details?.name}
+              //   onClick={() => goToDetailPage(navigate, details?.id)}
+            />
           </div>
         </CardLeft>
         <CardCenter type={details?.types[0]?.type?.name}>
@@ -155,45 +151,13 @@ export default function DetailPage() {
         </CardCenter>
         <CardRight type={details?.types[0]?.type?.name}>
           <h3>Base stats:</h3>
-          <Stats>
-            <p>{details?.stats[0].stat.name}:</p>
-            <p>{details?.stats[0].base_stat}</p>
-            <ProgressBarOut>
-              <ProgressBar0></ProgressBar0>
-            </ProgressBarOut>
-          </Stats>
-          <Stats>
-            <span>
-              {details?.stats[1].stat.name}: {details?.stats[1].base_stat}
-            </span>
-            <ProgressBarOut>
-              <ProgressBar1></ProgressBar1>
-            </ProgressBarOut>
-          </Stats>
-          <span>
-            {details?.stats[2].stat.name}: {details?.stats[2].base_stat}
-          </span>
-          <ProgressBarOut>
-            <ProgressBar2></ProgressBar2>
-          </ProgressBarOut>
-          <span>
-            {details?.stats[3].stat.name}: {details?.stats[3].base_stat}
-          </span>
-          <ProgressBarOut>
-            <ProgressBar3></ProgressBar3>
-          </ProgressBarOut>
-          <span>
-            {details?.stats[4].stat.name}: {details?.stats[4].base_stat}
-          </span>
-          <ProgressBarOut>
-            <ProgressBar4></ProgressBar4>
-          </ProgressBarOut>
-          <span>
-            {details?.stats[5].stat.name}: {details?.stats[5].base_stat}
-          </span>
-          <ProgressBarOut>
-            <ProgressBar5></ProgressBar5>
-          </ProgressBarOut>
+          {/* {details?.stats[0].stat.name}: {details?.stats[0].base_stat} */}
+          <div>HP: {<Progress bar={(details?.stats[0].base_stat)*(100/230)} />}</div>
+          <div>Attack: {<Progress bar={details?.stats[1].base_stat} />}</div>
+          <div>Defense: {<Progress bar={details?.stats[2].base_stat} />}</div>
+          <div>SP Attack: {<Progress bar={details?.stats[3].base_stat} />}</div>
+          <div>SP Defense: {<Progress bar={details?.stats[4].base_stat} />}</div>
+          <div>Speed: {<Progress bar={details?.stats[5].base_stat} />}</div>
         </CardRight>
       </DetailContainer>
     </Container>

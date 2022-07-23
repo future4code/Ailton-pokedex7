@@ -29,14 +29,13 @@ export default function Pokedex() {
     });
     setPokedex(newList);
     localStorage.setItem("pokedex", JSON.stringify(newList));
-    alert('Pokemen removido!')
+    alert('Pokemon removido!')
   };
 
   useEffect(() => {
     const storagePokedex = JSON.parse(localStorage.getItem("pokedex") || "[]");
     storagePokedex && setPokedex(storagePokedex);
-    console.log(storagePokedex)
-  }, [setPokedex]);
+  }, []);
 
   const pokedexPage = pokedex?.map((item) => {
     return (
@@ -75,8 +74,7 @@ export default function Pokedex() {
   return (
     <div>
       <Header page={"pokedex"} />
-      {console.log(pokedex)}
-      {!pokedexPage ? (
+      {pokedexPage.length == 0 ? (
         <PichuContainer>
           <img src={Pichu} alt="pichu" />
           <Msg>Sua Pokedex está vazia</Msg>
