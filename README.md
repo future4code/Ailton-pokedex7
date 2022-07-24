@@ -16,13 +16,31 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 
 ## ✔O que funciona
 - **Home**
-  - Em Construção
+  - Na pagina home é possivel ver a lista de todos os Pokémons vindos da API
+  - Os Pokémons podem ser adicionados à Pokédex
+  - Ao clicar na imagem do Pokémon você será direcionado à página de detalhes
+  - Ao adicionar o Pokémon, o botão Pokebola Aberta muda para Pokebola Fechada, fazendo com que não seja possivel adicionar mesmo Pokémon duas vezes na Pokedex
+  - Acesso a Pokedex.
 - **Pokédex**
-  - Em Construção
+  - Ver os Pokémons adicionados
+  - Remover os pokémons da pokedex
+  - Acesso à página de detalhes clicando na imagem do Pokémon
+  - Voltar para a home clicando no Logo ou na imagem de Pokedex aberta
 - **Detalhes do Pokemon**
-  - Em Construção
+  - Na página de detalhes é possivel ver informações do Pokémon. Como:
+  - Fotos
+  - Tipo
+  - Estatisticas
+  - Movimentos
 - **Batalha Pokemon**
   - Em Construção
+- **Funcionalidades Extras**
+  - Em Construção
+  <br/>
+  - Alerta de Sucesso ou erro nas operações caso ocorram
+  - Página de erro caso navegue por uma página não existente
+  - Responsividade Funcional
+  
   
 ## 🔗Link Surge  
 - http//neat-humor.surge.sh
@@ -32,7 +50,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 - react-icons
 - react-router-dom
 - styled-components
-
+- sweet-alert
 ## 🛠Tecnologias Utilizadas
  <div style="display: inline_block"><br>
   <img align="center" alt="React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
