@@ -9,8 +9,8 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 
 <h3 align="center"> 
 
-[🔗Surge](#link-surge) | [📚Bibliotecas](#bibliotecas-utilizadas) | [💻Projeto](como-rodar-o-projeto-localmente) |
-[🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedoras](#imagens) | [🖥️📱Imagens](#imagens) 
+[🔗Surge](#link-surge) | [💻Projeto](como-rodar-o-projeto-localmente) | [📚Bibliotecas](#bibliotecas-utilizadas) | 
+[🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedoras](#tecnologias-utilizadas) | [🖥️📱Imagens](#imagens) 
 
 <h3/>
 
@@ -34,16 +34,25 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Movimentos
 - **Batalha Pokemon**
   - Em Construção
-- **Funcionalidades Extras**
-  - Em Construção
-  <br/>
-  - Alerta de Sucesso ou erro nas operações caso ocorram
-  - Página de erro caso navegue por uma página não existente
-  - Responsividade Funcional
+- Alerta de Sucesso ou erro nas operações caso ocorram
+- Página de erro caso navegue por uma página não existente
+- Responsividade Funcional
   
   
 ## 🔗Link Surge  
-- http//neat-humor.surge.sh
+- http://special-stage.surge.sh
+
+## 💻Como Rodar o Projeto Localmente
+
+Siga o passo-a-passo abaixo:
+
+| Passo                     | Comando            |
+| ------------------------- | ------------------ |
+| Faça o Clone              | `git clone`        |
+| Instale as Dependências   | `npm install`      |
+| Utilize o Script Start    | `npm start`        |
+
+Por padrão a aplicação rodará localmente na porta 3000.
 
 ## 📚Bibliotecas Utilizadas
 - axios
@@ -58,21 +67,6 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Git" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"> 
 </div>
-
-## 💻Como Rodar o Projeto Localmente
-
-Siga o passo-a-passo abaixo:
-
-| Passo                     | Comando            |
-| ------------------------- | ------------------ |
-| Faça o Clone              | `git clone`        |
-| Instale as Dependências   | `npm install`      |
-| Utilize o Script Start    | `npm start`        |
-
-Por padrão a aplicação rodará localmente na porta 3000.
-
-## 🖥📱Imagens
-- Em construção
 
 <h2 align="center"> 
 
@@ -89,5 +83,8 @@ Por padrão a aplicação rodará localmente na porta 3000.
     </td> 
   </tr>
 </table>
+
+## 🖥📱Imagens
+- Em construção
 
 
