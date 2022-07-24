@@ -1,7 +1,7 @@
 import Header from "../../components/Header/Header";
 import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import Pichu from "../../assets/img/pichu.gif";
+import Squirtle from "../../assets/img/squirtle.gif";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
 import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
@@ -14,7 +14,7 @@ import {
   Name,
   Type,
   TypeImg,
-  PichuContainer,
+  SquirtleContainer,
   Msg,
   ButtonsContainer,
 } from "./Styled";
@@ -73,10 +73,10 @@ export default function Pokedex() {
     <>
       <Header page={"pokedex"} />
       {pokedexPage?.length === 0 ? (
-        <PichuContainer>
-          <img src={Pichu} alt="pichu" />
+        <SquirtleContainer>
+          <img src={Squirtle} alt="pichu" />
           <Msg>Sua Pokedex está vazia!</Msg>
-        </PichuContainer>
+        </SquirtleContainer>
       ) : (
         <Container>{pokedexPage}</Container>
       )}

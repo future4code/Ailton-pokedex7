@@ -50,13 +50,16 @@ export const CardContainer = styled.div`
       transition: none;
     }
   }
+  span {
+    margin-top: 15px;
+  }
 `;
 export const PokemonsImg = styled.img`
   width: 240px;
   cursor: pointer;
 `;
 export const Name = styled.h1`
-  font-size: 48px;
+  font-size: 45px;
   text-align: center;
   display: flex;
   flex-direction: column;

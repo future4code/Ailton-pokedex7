@@ -22,9 +22,8 @@ export const Loading = styled.div`
     height: 331.42px;
   }
   @media screen and (max-width: 480px) {
-    img{
-      width: 300px;
-      height: 150px;
+    img {
+      height: 250px;
     }
   }
 `;
@@ -99,7 +98,6 @@ export const CardCenter = styled.div`
   align-items: center;
   padding-top: 15px;
   line-height: 20px;
-
   img {
     transition: transform 0.5s;
   }
@@ -124,6 +122,9 @@ export const CardCenter = styled.div`
     :hover h1 {
       transition: none;
     }
+  }
+  span {
+    margin-top: 15px;
   }
 `;
 export const PokemonsImg = styled.img`
@@ -169,7 +170,7 @@ export const CardRight = styled.div`
   }
 `;
 export const Name = styled.h1`
-  font-size: 48px;
+  font-size: 45px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -209,7 +210,7 @@ export const ProgressBarOut = styled.div`
   height: 25px;
   line-height: 100%;
   background-color: #eee;
- 
+
   font-family: "comic sans ms";
   margin: 7px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
