@@ -12,9 +12,11 @@ export const Progress = ({ bar }) => {
     setStyle(newStyle);
   }, 1000);
 
+  const resultBar = parseInt(bar*(230/100))
+
   return (
     <ProgressBarOut>
-      <ProgressBar0 style={style}>{parseInt(bar*(230/100))}</ProgressBar0>
+      <ProgressBar0 style={style}>{String(resultBar)}</ProgressBar0>
     </ProgressBarOut>
   );
 };

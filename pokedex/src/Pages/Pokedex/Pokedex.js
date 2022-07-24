@@ -1,14 +1,14 @@
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import Pichu from "../../assets/img/pichu.gif";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
 import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons"
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import {
-  CardContainer,
   Container,
+  CardContainer,
   PokemonsImg,
   Name,
   Type,
@@ -18,9 +18,10 @@ import {
   ButtonsContainer,
 } from "./Styled";
 
+
 export default function Pokedex() {
   const navigate = useNavigate();
-  const { pokemon, setPokemon, pokedex, setPokedex } =
+  const { pokedex, setPokedex } =
     useContext(GlobalContext);
 
   const removeFromPokedex = (RemovePoke) => {
@@ -39,8 +40,7 @@ export default function Pokedex() {
 
   const pokedexPage = pokedex?.map((item) => {
     return (
-      <Container key={item.id}>
-      <CardContainer type={item?.types[0]?.type?.name}>
+      <CardContainer key={item.id} type={item?.types[0]?.type?.name}>
         <span>
           {item?.id < 10
             ? "00" + item?.id
@@ -60,28 +60,27 @@ export default function Pokedex() {
         <TypeImg src={typesIcons[item?.types[1]?.type.name]} />
         </Type>
         <ButtonsContainer>
-          <img
+          <img className="pokeClose"
             onClick={() => removeFromPokedex(item)}
             src={PokeClose}
-            alt={"Capiturar"}
+            alt={"Remover da Pokedex"}
           />
         </ButtonsContainer>
       </CardContainer>
-      </Container>
     );
   });
 
   return (
-    <div>
+    <>
       <Header page={"pokedex"} />
-      {pokedexPage.length == 0 ? (
+      {pokedexPage?.length == 0 ? (
         <PichuContainer>
           <img src={Pichu} alt="pichu" />
           <Msg>Sua Pokedex está vazia</Msg>
         </PichuContainer>
       ) : (
-        <div>{pokedexPage}</div>
+        <Container>{pokedexPage}</Container>
       )}
-    </div>
+    </>
   );
 }

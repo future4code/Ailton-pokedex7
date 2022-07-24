@@ -16,7 +16,6 @@ import psychic from '../../assets/types/psychic.png'
 import rock from '../../assets/types/rock.png'
 import steel from '../../assets/types/steel.png'
 import water from '../../assets/types/water.png'
-import styled from 'styled-components'
 
  export const typesIcons = {
     normal: normal,

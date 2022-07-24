@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CardImg from "../../assets/cards/orange.png";
 import { cards } from "../../components/PokeTypes/PokeTypesCards"; 
 
 export const PokemonsImg = styled.img`
@@ -14,6 +13,8 @@ margin: 0 auto;
   flex-direction: column;
 `
 export const Container = styled.div`
+   width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -38,8 +39,7 @@ export const Container = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  /* background-image: url(${CardImg}); */
-  background-image: url(${props => cards[props.type]});
+  background-image: url(${(props) => cards[props.type]});
   background-repeat: no-repeat;
   background-size: 100%;
   width: 320px;
@@ -49,7 +49,6 @@ export const CardContainer = styled.div`
   align-items: center;
   padding-top: 15px;
   line-height: 20px;
-
   img {
     transition: transform 0.5s;
   }
@@ -63,6 +62,17 @@ export const CardContainer = styled.div`
     font-family: Pokemon Hollow, serif;
     font-weight: 900;
     font-size: 50px;
+  }
+  @media screen and (max-width: 480px) {
+    img {
+      transition: none;
+    }
+    :hover > img {
+      transform: none;
+    }
+    :hover h1 {
+      transition: none;
+    }
   }
 `;
 
@@ -85,13 +95,18 @@ export const TypeImg = styled.img`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 55%;
-  img {
-    width: 50px;
+  margin-top: 10px;
+  width: 85%;
+  .pokeOpen {
+    width: 65px;
     cursor: pointer;
   }
+  .pokeClose {
+    width: 50px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
 `;
-
 export const Msg = styled.h1`
   margin-top: -20px;
   font-size: 37px;

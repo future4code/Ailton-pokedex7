@@ -1,31 +1,21 @@
 import styled from "styled-components";
-import CardImg from "../../assets/cards/blue.png";
-import { cards } from "../PokeTypes/PokeTypesCards"; 
+import { cards } from "../PokeTypes/PokeTypesCards";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  width: 90%;
 
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
   }
 `;
-export const Loading = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-height: 70vh;
-img {
-  width: 500px;
-  height: 331.42px;
-}
-`;
 
 export const CardContainer = styled.div`
-  background-image: url(${props => cards[props.type]});
+  background-image: url(${(props) => cards[props.type]});
   background-repeat: no-repeat;
   background-size: 100%;
   width: 320px;
@@ -35,7 +25,6 @@ export const CardContainer = styled.div`
   align-items: center;
   padding-top: 15px;
   line-height: 20px;
-
   img {
     transition: transform 0.5s;
   }
@@ -49,6 +38,17 @@ export const CardContainer = styled.div`
     font-family: Pokemon Hollow, serif;
     font-weight: 900;
     font-size: 50px;
+  }
+  @media screen and (max-width: 480px) {
+    img {
+      transition: none;
+    }
+    :hover > img {
+      transform: none;
+    }
+    :hover h1 {
+      transition: none;
+    }
   }
 `;
 export const PokemonsImg = styled.img`

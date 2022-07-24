@@ -1,6 +1,4 @@
 import styled from "styled-components";
-// import CardImg from '../../assets/img/cardImg.png'
-import CardImg from "../../assets/cards/blue.png";
 import { cards } from "../../components/PokeTypes/PokeTypesCards";
 import { cards2 } from "../../components/PokeTypes/PokeTypesCards";
 
@@ -8,13 +6,7 @@ export const DetailContainer = styled.div`
   display: flex;
   justify-content: center;
 
-  @media screen and (max-width: 640px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  @media screen and (max-width: 820px) {
+  @media screen and (max-width: 1000px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,26 +24,28 @@ const Loading = styled.div`
 `;
 export const PokeImg = styled.img`
   width: 110px;
-  padding: -100px;
+  /* padding: -100px; */
 `;
 export const CardLeft = styled.div`
-  background-size: 100%;
-  width: 20%;
-  height: 65vh;
   background-repeat: no-repeat;
-  border-radius: 5px;
-  background-image: url(${(props) => cards2[props.type]});
-  background-position: center;
-  transform: perspective(300px) rotateY(15deg);
-  margin-top: 3.2%;
-  transition: all 1s ease 0s;
+  background-size: 100%;
+  width: 320px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2% 5%;
-  justify-content: space-around;
+  padding-top: 15px;
+  line-height: 20px;
+  background-image: url(${(props) => cards2[props.type]});
+  transform: perspective(300px) rotateY(15deg);
+  transition: all 1s ease 0s;
 
-  li{
+  &:hover {
+    transform: perspective(350px) rotateY(0deg);
+    transition: all 0.8s ease 0s;
+  }
+
+  li {
     list-style: none;
   }
 
@@ -67,46 +61,79 @@ export const CardLeft = styled.div`
     font-size: 25px;
     margin-top: 40px;
   }
+
+  @media screen and (max-width: 1000px) {
+    transform: none;
+    transition: none;
+    :hover {
+      transform: none;
+      transition: none;
+    }
+  }
 `;
 export const CardCenter = styled.div`
-  width: 20%;
-  margin-top: 3%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  height: 65vh;
-  border-radius: 5px;
   background-image: url(${(props) => cards[props.type]});
-  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 320px;
+  height: 500px;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+  line-height: 20px;
 
+  img {
+    transition: transform 0.5s;
+  }
+  :hover > img {
+    transform: scale(1.2);
+  }
+  :hover h1 {
+    transition: text-shadow 0.5s;
+  }
   span {
     font-family: Pokemon Hollow, serif;
     font-weight: 900;
     font-size: 50px;
   }
+  @media screen and (max-width: 480px) {
+    img {
+      transition: none;
+    }
+    :hover > img {
+      transform: none;
+    }
+    :hover h1 {
+      transition: none;
+    }
+  }
 `;
 export const CardRight = styled.div`
-  width: 20%;
-  height: 65vh;
-  background-size: 100%;
   background-repeat: no-repeat;
-  border-radius: 5px;
-  background-position: center;
-  background-image: url(${(props) => cards2[props.type]});
-  transform: perspective(300px) rotateY(-15deg);
-  margin-top: 3.2%;
-  transition: all 1s ease 0s;
+  background-size: 100%;
+  width: 320px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2% 5%;
-  justify-content: space-around;
+  padding-top: 15px;
+  line-height: 20px;
+  background-image: url(${(props) => cards2[props.type]});
+  transform: perspective(300px) rotateY(-15deg);
+  transition: all 1s ease 0s;
 
   &:hover {
     transform: perspective(350px) rotateY(0deg);
     transition: all 0.8s ease 0s;
+  }
+  @media screen and (max-width: 1000px) {
+    transform: none;
+    transition: none;
+    :hover {
+      transform: none;
+      transition: none;
+    }
   }
 `;
 export const ProgressBarOut = styled.div`
@@ -131,5 +158,5 @@ export const Stats = styled.div`
   display: flex;
 `;
 export const ContainerImages = styled.div`
-display: flex;
-`
+  display: flex;
+`;
