@@ -36,6 +36,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Em Construção
 - Alerta de Sucesso ou erro nas operações caso ocorram
 - Página de erro caso navegue por uma página não existente
+  Loading em todas as páginas
 - Responsividade Funcional
   
   
@@ -85,6 +86,15 @@ Por padrão a aplicação rodará localmente na porta 3000.
 </table>
 
 ## 🖥📱Imagens
-- Em construção
-
-
+Home
+![prints (5)](https://user-images.githubusercontent.com/104591781/180666884-e0ed2a40-188a-4d87-80d6-19017fb865f0.png)
+Alert ao capturar um Pokémon 
+![prints (6)](https://user-images.githubusercontent.com/104591781/180666885-26ed3bf3-3260-4826-a136-0dc3fd8e270f.png)
+Um Pokémon não pode ser adicionado à Pokedex duas vezes  
+![prints (1)](https://user-images.githubusercontent.com/104591781/180666879-ec235cc4-6393-4fc7-bc18-a73ccc9b2321.png)
+Pokedex
+![prints (3)](https://user-images.githubusercontent.com/104591781/180666882-a9a087ce-97f7-4261-9e05-6ccb956a8681.png)
+Pokemon sendo removido  
+![prints (2)](https://user-images.githubusercontent.com/104591781/180666881-0df77f22-9ce3-4869-838e-ec8ba4b51229.png)
+Página de detalhes  
+![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
