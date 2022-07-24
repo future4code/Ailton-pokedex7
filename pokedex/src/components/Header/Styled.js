@@ -5,10 +5,9 @@ export const HeaderCont = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  
+
   @media screen and (max-height: 630px) {
     height: 28vh;
-    
   }
 `;
 
@@ -26,6 +25,7 @@ export const Logo = styled.img`
 export const Closed = styled.img`
   width: 120px;
   margin-top: 20px;
+  cursor: pointer;
 
   @media screen and (max-width: 480px) {
     width: 80px;
@@ -33,8 +33,9 @@ export const Closed = styled.img`
 `;
 export const Open = styled.img`
   width: 150px;
+  cursor: pointer;
 
   @media screen and (max-width: 480px) {
-    width: 90px;
+    width: 80px;
   }
 `;

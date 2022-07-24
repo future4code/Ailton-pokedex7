@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export const useGetPokeList = (url) => {
   const [data, setData] = useState(undefined);
@@ -18,8 +18,7 @@ export const useGetPokeList = (url) => {
         setIsLoading(false);
         setError(err);
       });
-  }, [url])
+  }, [url]);
 
-  return [data, isLoading, error]
-}
-
+  return [data, isLoading, error];
+};

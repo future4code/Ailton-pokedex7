@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
+  width: 100%;
 
   @media screen and (max-width: 480px) {
     display: flex;
@@ -53,14 +53,17 @@ export const CardContainer = styled.div`
 `;
 export const PokemonsImg = styled.img`
   width: 240px;
+  cursor: pointer;
 `;
 export const Name = styled.h1`
   font-size: 48px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: Pokemon Hollow, serif;
   margin-top: 10px;
+  line-height: 10px;
 `;
 export const Type = styled.div`
   display: flex;
@@ -73,7 +76,9 @@ export const TypeImg = styled.img`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-bottom: 50px;
+  flex: 1;
+  align-items: flex-end;
   width: 85%;
   .pokeOpen {
     width: 65px;

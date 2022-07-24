@@ -17,18 +17,14 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Pokemon Solid';
   src: url(${Font2});
 }
-  
 }
 #root, body {
   min-height: 100vh;
   min-width: 100%;
-
-  /* background: #EFEFBB; */
-    /* background: linear-gradient(to right, green, orange, blue); */
+    background: linear-gradient(to right, darkblue, white, darkblue);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
   }
-  
   @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -39,13 +35,11 @@ const GlobalStyle = createGlobalStyle`
     100% {
         background-position: 0% 50%;
     }
-
 }
 #root{
   display:flex;
   flex-direction: column;
 }
-
 `;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

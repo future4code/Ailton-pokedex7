@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import Pichu from "../../assets/img/pichu.gif";
 import PokeClose from "../../assets/img/pokeClose.png";
 import GlobalContext from "../../components/Global/GlobalContext";
-import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons"
+import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
 import { useContext, useEffect } from "react";
+import Swal from "sweetalert2";
 import {
   Container,
   CardContainer,
@@ -18,11 +19,9 @@ import {
   ButtonsContainer,
 } from "./Styled";
 
-
 export default function Pokedex() {
   const navigate = useNavigate();
-  const { pokedex, setPokedex } =
-    useContext(GlobalContext);
+  const { pokedex, setPokedex } = useContext(GlobalContext);
 
   const removeFromPokedex = (RemovePoke) => {
     const newList = pokedex.filter((poke) => {
@@ -30,7 +29,7 @@ export default function Pokedex() {
     });
     setPokedex(newList);
     localStorage.setItem("pokedex", JSON.stringify(newList));
-    alert('Pokemon removido!')
+    Swal.fire("Oh, no!!",`${(RemovePoke.name).toUpperCase()} foi removido da sua pokedex!`, "");
   };
 
   useEffect(() => {
@@ -49,19 +48,19 @@ export default function Pokedex() {
             : item?.id}
         </span>
         <PokemonsImg
-          //  src={`https://professorlotus.com/Sprites/${item.name}.gif`}
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${item?.id}.png`}
           alt={item?.id}
           onClick={() => goToDetailPage(navigate, item?.id)}
         />
         <Name>{item?.name}</Name>
         <Type>
-        <TypeImg src={typesIcons[item?.types[0].type.name]} />
-        <TypeImg src={typesIcons[item?.types[1]?.type.name]} />
+          <TypeImg src={typesIcons[item?.types[0].type.name]} />
+          <TypeImg src={typesIcons[item?.types[1]?.type.name]} />
         </Type>
         <ButtonsContainer>
-          <img className="pokeClose"
-            onClick={() => removeFromPokedex(item)}
+          <img
+            className="pokeClose"
+            onClick={() => removeFromPokedex(item) }
             src={PokeClose}
             alt={"Remover da Pokedex"}
           />
@@ -73,10 +72,10 @@ export default function Pokedex() {
   return (
     <>
       <Header page={"pokedex"} />
-      {pokedexPage?.length == 0 ? (
+      {pokedexPage?.length === 0 ? (
         <PichuContainer>
           <img src={Pichu} alt="pichu" />
-          <Msg>Sua Pokedex está vazia</Msg>
+          <Msg>Sua Pokedex está vazia!</Msg>
         </PichuContainer>
       ) : (
         <Container>{pokedexPage}</Container>

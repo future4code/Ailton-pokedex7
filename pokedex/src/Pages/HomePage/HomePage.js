@@ -1,51 +1,23 @@
 import Header from "../../components/Header/Header";
 import Cards from "../../components/Cards/Cards";
-// import styled from "styled-components";
 import GlobalContext from "../../components/Global/GlobalContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import LoadingImg from "../../assets/img/loading.gif";
-import { Container, Loading, Pagination, Button } from "./styled";
+import { Container, Loading, Button } from "./styled";
+import Pagination from "../../components/Pagination/Pagination";
 
 export default function HomePage() {
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(30);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [itens, setItens] = useState([]);
   const { pokemon, setPokemon, isLoading, setIsLoading } =
     useContext(GlobalContext);
+  const [itemsPerPage, setItemsPerPage] = useState(30);
+  const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    setItens(pokemon);
-  }, []);
-
-  const pages = Math.ceil(pokemon?.length / pokemonsPerPage);
-  const startIndex = currentPage * pokemonsPerPage;
-  const endIndex = startIndex + pokemonsPerPage;
-  const currentPokemon = pokemon?.slice(startIndex, endIndex);
-
-  // const range = (start, end) => {
-  //   let length = end - start + 1;
-
-  //   return Array.from({ length }, (_, idx) => idx + start);
-  // };
-
-  // const siblingCount = 1;
-  // const totalPageNumbers = siblingCount + 5;
-
-  // const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
-  // const rightSiblingIndex = Math.min(currentPage + siblingCount, pages);
-
-  // const shouldShowLeftDots = leftSiblingIndex > 2;
-  // const shouldShowRightDots = rightSiblingIndex < pages - 2;
-
-  // const firstPageIndex = 1;
-  // const lastPageIndex = pages;
-
-  // if (!shouldShowLeftDots && shouldShowRightDots) {
-  //   let leftItemCount = 3 + 2 * siblingCount;
-  //   let leftRange = range(1, leftItemCount);
-
-  //   return [...leftRange, "...", pages];
-  // }
+  const currentPokemons = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * itemsPerPage;
+    const lastPageIndex = firstPageIndex + itemsPerPage;
+    return pokemon?.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, pokemon, itemsPerPage]);
 
   return (
     <div>
@@ -53,23 +25,17 @@ export default function HomePage() {
       {pokemon && !isLoading ? (
         <>
           <Container>
-            {currentPokemon?.map((pokemon) => {
+            {currentPokemons?.map((pokemon) => {
               return <Cards key={pokemon?.id} card={pokemon} />;
             })}
           </Container>
-          <Pagination>
-            {Array.from(Array(pages), (pokemon, index) => {
-              return (
-                <Button
-                  key={index}
-                  value={index}
-                  onClick={(e) => setCurrentPage(Number(e.target.value))}
-                >
-                  {index + 1}
-                </Button>
-              );
-            })}
-          </Pagination>
+
+          <Pagination
+            currentPage={currentPage}
+            totalCount={pokemon?.length}
+            itemsPerPage={itemsPerPage}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
         </>
       ) : (
         <Loading>
