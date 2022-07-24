@@ -1,11 +1,12 @@
 import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
 import React, { useEffect } from "react";
 import GlobalContext from "../Global/GlobalContext";
 import { typesIcons } from "../PokeTypes/PokemonTypeIcons";
+import Swal from "sweetalert2";
 import {
   CardContainer,
   PokemonsImg,
@@ -15,19 +16,18 @@ import {
   ButtonsContainer,
 } from "./Styled";
 
-function Card({card}) {
+function Card({ card }) {
   const navigate = useNavigate();
   const pokedexLocal = localStorage.getItem("pokedex");
 
-  const { pokemon, setPokemon, pokedex, setPokedex } =
-    useContext(GlobalContext);
+  const { pokedex, setPokedex } = useContext(GlobalContext);
 
   useEffect(() => {
     setPokedex(JSON.parse(pokedexLocal));
-  }, []);
+  }, [pokedexLocal, setPokedex]);
 
   const addToPokedex = (newToPokedex) => {
-    window.alert(`${newToPokedex.name}, eu escolho você!`);
+    Swal.fire(`Gotcha!!<br/>${(newToPokedex.name).toUpperCase()}, eu escolho você!`,"", "success");
 
     const pokedexLocal = localStorage.getItem("pokedex");
     if (!!pokedexLocal) {
@@ -51,10 +51,8 @@ function Card({card}) {
     return item?.name;
   });
 
-
-  
-    return (
-      <CardContainer key={card?.id} type={card?.types[0]?.type?.name}>
+  return (
+    <CardContainer key={card?.id} type={card?.types[0]?.type?.name}>
       <span>
         {card?.id < 10
           ? "00" + card?.id
@@ -63,7 +61,6 @@ function Card({card}) {
           : card?.id}
       </span>
       <PokemonsImg
-        //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${card?.id}.png`}
         alt={card?.name}
         onClick={() => goToDetailPage(navigate, card?.id)}
@@ -78,8 +75,8 @@ function Card({card}) {
           <img
             className="pokeClose"
             src={PokeClose}
-            alt={"Capiturar"}
-            onClick={() => alert("Já está na pokedex!")}
+            alt={"Pokemon Capiturado"}
+            onClick={() => Swal.fire(`${(card.name).toUpperCase()} já está na sua pokedex!`,"", "success")}
           />
         )}
         {!ListPokedex?.includes(card?.name) && (
@@ -92,6 +89,6 @@ function Card({card}) {
         )}
       </ButtonsContainer>
     </CardContainer>
-    );
+  );
 }
 export default Card;

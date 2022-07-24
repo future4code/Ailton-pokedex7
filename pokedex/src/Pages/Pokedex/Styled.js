@@ -1,43 +1,55 @@
 import styled from "styled-components";
-import { cards } from "../../components/PokeTypes/PokeTypesCards"; 
+import { cards } from "../../components/PokeTypes/PokeTypesCards";
 
 export const PokemonsImg = styled.img`
   width: 240px;
+  cursor: pointer;
 `;
-
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  img {
+    width: 500px;
+    height: 331.42px;
+  }
+  @media screen and (max-width: 480px) {
+    img{
+      width: 300px;
+      height: 150px;
+    }
+  }
+`;
 export const PichuContainer = styled.div`
-margin: 0 auto;
+  margin: 0 auto;
   width: 400px;
   justify-content: center;
   display: flex;
   flex-direction: column;
-`
+`;
 export const Container = styled.div`
-   width: 100%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
-
   @media screen and (max-width: 480px) {
     display: flex;
     flex-direction: column;
   }
-
   @media screen and (max-width: 640px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   @media screen and (max-width: 820px) {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 `;
-
 export const CardContainer = styled.div`
   background-image: url(${(props) => cards[props.type]});
   background-repeat: no-repeat;
@@ -75,9 +87,9 @@ export const CardContainer = styled.div`
     }
   }
 `;
-
 export const Name = styled.h1`
   font-size: 48px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +107,9 @@ export const TypeImg = styled.img`
 export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-bottom: 50px;
+  flex: 1;
+  align-items: flex-end;
   width: 85%;
   .pokeOpen {
     width: 65px;

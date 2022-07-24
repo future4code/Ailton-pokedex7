@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import GlobalContext from "./GlobalContext";
 import { BASE_URL } from "../../constants/url";
+import Swal from "sweetalert2";
 
 const GlobalState = (props) => {
   const [pokemon, setPokemon] = useState();
@@ -18,7 +19,12 @@ const GlobalState = (props) => {
           pokemonList(response.data.results);
         })
         .catch((error) => {
-          console.log(error.response.message);
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Algo deu errado. Tente novamente mais tarde",
+            footer: `Código do erro ${error.response.status}`,
+          });;
         });
     };
     getAllPokemons();
@@ -37,9 +43,14 @@ const GlobalState = (props) => {
           })
           .catch((error) => {
             setIsLoading(false);
-            console.log(error);
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Algo deu errado. Tente novamente mais tarde",
+              footer: `Código do erro ${error.response.status}`,
+            });;
           });
-        const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonRecord.id}.png`;
+        const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonRecord?.id}.png`;
         return {
           ...pokemonRecord,
           image,
