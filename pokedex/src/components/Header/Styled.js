@@ -4,19 +4,22 @@ export const HeaderCont = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  width: 100%;
+  
+  @media screen and (max-height: 630px) {
+    height: 28vh;
+    
+  }
 `;
 
 export const Logo = styled.img`
-  width: 500px;
+  width: 400px;
   display: flex;
   justify-content: end;
   align-items: center;
 
   @media screen and (max-width: 480px) {
-    width: 290px;
-    margin-left: 50px;
-    
+    width: 280px;
   }
 `;
 
@@ -25,19 +28,13 @@ export const Closed = styled.img`
   margin-top: 20px;
 
   @media screen and (max-width: 480px) {
-    width: 90px;
-    margin-right: 40px;
-    
+    width: 80px;
   }
 `;
-
 export const Open = styled.img`
   width: 150px;
-  margin-top: 20px;
 
   @media screen and (max-width: 480px) {
-    width: 100px;
-    margin-right: 50px;
-    
+    width: 90px;
   }
 `;

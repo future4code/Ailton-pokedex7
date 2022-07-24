@@ -15,19 +15,18 @@ import {
   ButtonsContainer,
 } from "./Styled";
 
-function Card({ pokemon }) {
+function Card({card}) {
   const navigate = useNavigate();
   const pokedexLocal = localStorage.getItem("pokedex");
-  const [inPokedex, setInPokedex] = useState(false);
 
-  const { pokedex, setPokedex, pokemonList } = useContext(GlobalContext);
+  const { pokemon, setPokemon, pokedex, setPokedex } =
+    useContext(GlobalContext);
 
   useEffect(() => {
     setPokedex(JSON.parse(pokedexLocal));
   }, []);
 
   const addToPokedex = (newToPokedex) => {
-    // newToPokedex.onPokedex = true;
     window.alert(`${newToPokedex.name}, eu escolho você!`);
 
     const pokedexLocal = localStorage.getItem("pokedex");
@@ -49,38 +48,33 @@ function Card({ pokemon }) {
   };
 
   const ListPokedex = pokedex?.map((item) => {
-    return item.name;
+    return item?.name;
   });
 
-  const status = () => {
-    const index = pokedex?.findIndex((item) => {
-      return item?.name === pokemon?.name;
-    });
-    return index > -1;
-  };
 
-  return (
-    <CardContainer type={pokemon?.types[0]?.type?.name}>
+  
+    return (
+      <CardContainer key={card?.id} type={card?.types[0]?.type?.name}>
       <span>
-        {pokemon?.id < 10
-          ? "00" + pokemon?.id
-          : pokemon?.id >= 10 && pokemon?.id < 100
-          ? "0" + pokemon?.id
-          : pokemon?.id}
+        {card?.id < 10
+          ? "00" + card?.id
+          : card?.id >= 10 && card?.id < 100
+          ? "0" + card?.id
+          : card?.id}
       </span>
       <PokemonsImg
         //src={`https://professorlotus.com/Sprites/${pokemon.name}.gif`}
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon?.id}.png`}
-        alt={pokemon?.name}
-        onClick={() => goToDetailPage(navigate, pokemon?.id)}
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${card?.id}.png`}
+        alt={card?.name}
+        onClick={() => goToDetailPage(navigate, card?.id)}
       />
-      <Name>{pokemon?.name}</Name>
+      <Name>{card?.name}</Name>
       <Type>
-        <TypeImg src={typesIcons[pokemon?.types[0]?.type?.name]} />
-        <TypeImg src={typesIcons[pokemon?.types[1]?.type?.name]} />
+        <TypeImg src={typesIcons[card?.types[0]?.type?.name]} />
+        <TypeImg src={typesIcons[card?.types[1]?.type?.name]} />
       </Type>
       <ButtonsContainer>
-        {ListPokedex.includes(pokemon.name) && (
+        {ListPokedex?.includes(card?.name) && (
           <img
             className="pokeClose"
             src={PokeClose}
@@ -88,17 +82,16 @@ function Card({ pokemon }) {
             onClick={() => alert("Já está na pokedex!")}
           />
         )}
-        {!ListPokedex.includes(pokemon.name) && (
+        {!ListPokedex?.includes(card?.name) && (
           <img
             className="pokeOpen"
-            onClick={() => addToPokedex(pokemon)}
+            onClick={() => addToPokedex(card)}
             src={PokeOpen}
             alt={"Capiturar"}
           />
         )}
       </ButtonsContainer>
     </CardContainer>
-  );
+    );
 }
-
 export default Card;
