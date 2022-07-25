@@ -47,7 +47,7 @@ const GlobalState = (props) => {
               icon: "error",
               title: "Oops...",
               text: "Algo deu errado. Tente novamente mais tarde",
-              footer: `Código do erro ${error.response.status}`,
+              footer: `Erro: ${error.response.message}`,
             });;
           });
         const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonRecord?.id}.png`;

@@ -103,13 +103,6 @@ export default function DetailPage() {
               <li>{details?.moves[5]?.move?.name}</li>
             </ul>
             <br />
-            {/* <>
-          <p><strong>Altura: </strong>
-          {(details?.height * 0.1).toFixed(2)}M</p>
-          <p>
-            <strong>Peso:</strong> {details?.weight - 0.1}Kg
-          </p>
-          </> */}
             <h2>Shiny</h2>
             <ContainerImages>
               <PokeImgFront

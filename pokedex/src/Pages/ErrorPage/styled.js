@@ -6,23 +6,33 @@ export const Container = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  @media screen and (max-width: 480px) {
+    width: 350px;
+  }
 `;
 export const DivButton = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   button {
-    margin: 20px;
     font-size: 24px;
+    font-weight: bold;
     width: 170px;
     height: 40px;
+    text-shadow: 1px 1px black;
+    box-shadow: 0px 0px 1px 1px white, 0 0 0 3px black;
     border-radius: 5px;
     cursor: pointer;
   }
 `;
 export const Error = styled.h1`
-  margin-top: -150px;
+  margin-top: -40px;
   font-size: 42px;
   text-align: center;
-  text-shadow: 2px 2px black;
+  text-shadow: 1px black;
+  font-family: "Pokemon Solid";
+  @media screen and (max-width: 480px) {
+    font-size: 30px;
+    margin-top: 0;
+  }
 `;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HeaderCont = styled.div`
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   width: 100%;

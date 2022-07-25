@@ -1,10 +1,9 @@
 import Header from "../../components/Header/Header";
 import Cards from "../../components/Cards/Cards";
 import GlobalContext from "../../components/Global/GlobalContext";
-import { useContext, useState, useEffect, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useContext, useState, useMemo } from "react";
 import LoadingImg from "../../assets/img/loading.gif";
-import { Container, Loading, Button } from "./styled";
+import { Container, Loading } from "./styled";
 import Pagination from "../../components/Pagination/Pagination";
 
 export default function HomePage() {
