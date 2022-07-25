@@ -7,7 +7,7 @@ import { useContext, useState, useEffect } from "react";
 import { typesIcons, colors } from "../../components/PokeTypes/PokemonTypeIcons";
 import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
-import GlobalContext from "../../components/Global/GlobalContext";
+import {GlobalContext} from "../../components/Global/GlobalContext";
 import { Progress } from "./ProgressBar";
 import LoadingImg from "../../assets/img/loading.gif";
 import { AiFillHeart } from "react-icons/ai";

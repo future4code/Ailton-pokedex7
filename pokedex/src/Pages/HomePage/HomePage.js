@@ -1,13 +1,15 @@
 import Header from "../../components/Header/Header";
 import Cards from "../../components/Cards/Cards";
-import GlobalContext from "../../components/Global/GlobalContext";
+import { GlobalContext } from "../../components/Global/GlobalContext";
 import { useContext, useState, useMemo } from "react";
-import LoadingImg from "../../assets/img/loading.gif";
+import { useNavigate } from "react-router-dom";
+import { goToBattlePage } from "../../routes/coordinator";
 import { Container, Loading } from "./styled";
+import LoadingImg from "../../assets/img/loading.gif";
 import Pagination from "../../components/Pagination/Pagination";
 
 export default function HomePage() {
-  const { pokemon, setPokemon, isLoading, setIsLoading } =
+  const { pokemon, isLoading } =
     useContext(GlobalContext);
   const [itemsPerPage, setItemsPerPage] = useState(30);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,9 +20,14 @@ export default function HomePage() {
     return pokemon?.slice(firstPageIndex, lastPageIndex);
   }, [currentPage, pokemon, itemsPerPage]);
 
+  const navigate = useNavigate();
+
   return (
     <div>
       <Header page={"home"} />
+      <button onClick={() => goToBattlePage(navigate)}>
+        Batalha
+      </button>
       {pokemon && !isLoading ? (
         <>
           <Container>

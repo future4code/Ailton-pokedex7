@@ -6,10 +6,10 @@ export const Container = styled.ul`
   margin-bottom: 30px;
   justify-content: center;
   gap: 20px;
-  @media (max-width: 640px) {
-  }
-`;
-
+  list-style-type: none;
+    @media (max-width: 640px) {
+    }
+`
 export const Item = styled.li`
   cursor: pointer;
   display: flex;

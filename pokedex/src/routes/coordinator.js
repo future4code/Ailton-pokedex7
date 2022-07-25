@@ -7,6 +7,9 @@ export const goToDetailPage = (navigate, id) => {
 export const goToPokedex = (navigate) => {
   navigate("/pokedex");
 };
+export const goToBattlePage = (navigate) => {
+  navigate("/battlePage");
+};
 export const goToErrorPage = (navigate) => {
   navigate("/errorPage");
 };

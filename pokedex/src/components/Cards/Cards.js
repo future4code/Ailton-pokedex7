@@ -4,7 +4,7 @@ import { useContext } from "react";
 import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
 import React, { useEffect } from "react";
-import GlobalContext from "../Global/GlobalContext";
+import {GlobalContext} from "../Global/GlobalContext";
 import { typesIcons } from "../PokeTypes/PokemonTypeIcons";
 import Swal from "sweetalert2";
 import {
