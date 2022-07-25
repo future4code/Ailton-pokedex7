@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   min-width: 100%;
     background: linear-gradient(to right, darkblue, white, darkblue);
     background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
+    /* animation: gradient 5s ease infinite; */
   }
   @keyframes gradient {
     0% {

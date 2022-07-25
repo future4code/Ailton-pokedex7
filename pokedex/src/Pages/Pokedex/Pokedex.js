@@ -3,7 +3,7 @@ import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import Pichu from "../../assets/img/pichu.gif";
 import PokeClose from "../../assets/img/pokeClose.png";
-import GlobalContext from "../../components/Global/GlobalContext";
+import {GlobalContext} from "../../components/Global/GlobalContext";
 import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
