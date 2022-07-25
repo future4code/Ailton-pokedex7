@@ -23,30 +23,7 @@ export const Loading = styled.div`
   }
   @media screen and (max-width: 480px) {
     img{
-      width: 300px;
-      height: 150px;
+      height: 250px;
     }
-  }
-`;
-export const Pagination = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  justify-content: center;
-  gap: 10px;
-`;
-export const Button = styled.button`
-  cursor: pointer;
-  display: flex;
-  font-family: "Pokemon Solid";
-  justify-content: center;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  font-size: 20px;
-  :hover {
-    background-color: lightcoral;
-    box-shadow: 4px 3px 6px 2px lightcoral;
   }
 `;

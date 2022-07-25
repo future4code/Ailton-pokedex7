@@ -27,7 +27,11 @@ function Card({ card }) {
   }, [pokedexLocal, setPokedex]);
 
   const addToPokedex = (newToPokedex) => {
-    Swal.fire(`Gotcha!!<br/>${(newToPokedex.name).toUpperCase()}, eu escolho você!`,"", "success");
+    Swal.fire(
+      `Gotcha!!<br/>${newToPokedex.name.toUpperCase()}, eu escolho você!`,
+      "",
+      "success"
+    );
 
     const pokedexLocal = localStorage.getItem("pokedex");
     if (!!pokedexLocal) {
@@ -76,7 +80,13 @@ function Card({ card }) {
             className="pokeClose"
             src={PokeClose}
             alt={"Pokemon Capiturado"}
-            onClick={() => Swal.fire(`${(card.name).toUpperCase()} já está na sua pokedex!`,"", "success")}
+            onClick={() =>
+              Swal.fire(
+                `${card.name.toUpperCase()} já está na sua pokedex!`,
+                "",
+                "success"
+              )
+            }
           />
         )}
         {!ListPokedex?.includes(card?.name) && (

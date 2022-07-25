@@ -15,13 +15,12 @@ export const Loading = styled.div`
     height: 331.42px;
   }
   @media screen and (max-width: 480px) {
-    img{
-      width: 300px;
-      height: 150px;
+    img {
+      height: 250px;
     }
   }
 `;
-export const PichuContainer = styled.div`
+export const SquirtleContainer = styled.div`
   margin: 0 auto;
   width: 400px;
   justify-content: center;
@@ -74,6 +73,7 @@ export const CardContainer = styled.div`
     font-family: Pokemon Hollow, serif;
     font-weight: 900;
     font-size: 50px;
+    margin-top: 10px;
   }
   @media screen and (max-width: 480px) {
     img {
@@ -86,9 +86,12 @@ export const CardContainer = styled.div`
       transition: none;
     }
   }
+  span {
+    margin-top: 15px;
+  }
 `;
 export const Name = styled.h1`
-  font-size: 48px;
+  font-size: 45px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -123,7 +126,8 @@ export const ButtonsContainer = styled.div`
 `;
 export const Msg = styled.h1`
   margin-top: -20px;
-  font-size: 37px;
+  font-size: 33px;
   text-align: center;
   text-shadow: 1px 1px black;
+  font-family: "comic sans ms";
 `;

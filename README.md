@@ -9,8 +9,8 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 
 <h3 align="center"> 
 
-[🔗Surge](#link-surge) | [📚Bibliotecas](#bibliotecas-utilizadas) | [💻Projeto](como-rodar-o-projeto-localmente) |
-[🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedoras](#imagens) | [🖥️📱Imagens](#imagens) 
+[🔗Surge](#link-surge) | [💻Projeto](como-rodar-o-projeto-localmente) | [📚Bibliotecas](#bibliotecas-utilizadas) | 
+[🛠️Tecnologias](#tecnologias-utilizadas) | [👩🏻‍💻Desenvolvedoras](#tecnologias-utilizadas) | [🖥️📱Imagens](#imagens) 
 
 <h3/>
 
@@ -34,16 +34,26 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Movimentos
 - **Batalha Pokemon**
   - Em Construção
-- **Funcionalidades Extras**
-  - Em Construção
-  <br/>
-  - Alerta de Sucesso ou erro nas operações caso ocorram
-  - Página de erro caso navegue por uma página não existente
-  - Responsividade Funcional
+- Alerta de Sucesso ou erro nas operações caso ocorram
+- Página de erro caso navegue por uma página não existente
+  Loading em todas as páginas
+- Responsividade Funcional
   
   
 ## 🔗Link Surge  
-- http//neat-humor.surge.sh
+- http://special-stage.surge.sh
+
+## 💻Como Rodar o Projeto Localmente
+
+Siga o passo-a-passo abaixo:
+
+| Passo                     | Comando            |
+| ------------------------- | ------------------ |
+| Faça o Clone              | `git clone`        |
+| Instale as Dependências   | `npm install`      |
+| Utilize o Script Start    | `npm start`        |
+
+Por padrão a aplicação rodará localmente na porta 3000.
 
 ## 📚Bibliotecas Utilizadas
 - axios
@@ -58,21 +68,6 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   <img align="center" alt="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Git" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg"> 
 </div>
-
-## 💻Como Rodar o Projeto Localmente
-
-Siga o passo-a-passo abaixo:
-
-| Passo                     | Comando            |
-| ------------------------- | ------------------ |
-| Faça o Clone              | `git clone`        |
-| Instale as Dependências   | `npm install`      |
-| Utilize o Script Start    | `npm start`        |
-
-Por padrão a aplicação rodará localmente na porta 3000.
-
-## 🖥📱Imagens
-- Em construção
 
 <h2 align="center"> 
 
@@ -90,4 +85,16 @@ Por padrão a aplicação rodará localmente na porta 3000.
   </tr>
 </table>
 
-
+## 🖥📱Imagens
+Home
+![prints (5)](https://user-images.githubusercontent.com/104591781/180666884-e0ed2a40-188a-4d87-80d6-19017fb865f0.png)
+Alert ao capturar um Pokémon 
+![prints (6)](https://user-images.githubusercontent.com/104591781/180666885-26ed3bf3-3260-4826-a136-0dc3fd8e270f.png)
+Um Pokémon não pode ser adicionado à Pokedex duas vezes  
+![prints (1)](https://user-images.githubusercontent.com/104591781/180666879-ec235cc4-6393-4fc7-bc18-a73ccc9b2321.png)
+Pokedex
+![prints (3)](https://user-images.githubusercontent.com/104591781/180666882-a9a087ce-97f7-4261-9e05-6ccb956a8681.png)
+Pokemon sendo removido  
+![prints (2)](https://user-images.githubusercontent.com/104591781/180666881-0df77f22-9ce3-4869-838e-ec8ba4b51229.png)
+Página de detalhes  
+![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
