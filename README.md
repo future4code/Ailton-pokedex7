@@ -16,7 +16,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
 
 ## ✔O que funciona
 - **Home**
-  - Na pagina home é possivel ver a lista de todos os Pokémons vindos da API
+  - Na pagina home é possivel ver a lista de Pokémons vindos da API
   - Os Pokémons podem ser adicionados à Pokédex
   - Ao clicar na imagem do Pokémon você será direcionado à página de detalhes
   - Ao adicionar o Pokémon, o botão Pokebola Aberta muda para Pokebola Fechada, fazendo com que não seja possivel adicionar mesmo Pokémon duas vezes na Pokedex
@@ -33,15 +33,19 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Estatisticas
   - Movimentos
 - **Batalha Pokemon**
-  - Em Construção
+  - Na página de batalhas é possivel jogar no estilo Super Trunfo 
+  - Os Pokémons são sorteados e é possivel fazer a comparação de atributos
+  - Mensagens na tela após cada rodada e Alerta após a finalização de 5 Rounds. Informando quem foi o vencedor
+  - Ao lado esquedo da tela tem um botão de regras/rules, onde ao clicar o usuário verá a seguinnte mensagem explicativa:
+  ```
+  Clique no Card do seu Pokémon e escolha um Atributo. Se a pontuação for maior que a do seu oponente >> Você Vence!!
+  ```
 - Alerta de Sucesso ou erro nas operações caso ocorram
 - Página de erro caso navegue por uma página não existente
   Loading em todas as páginas
 - Responsividade Funcional
-  
-  
 ## 🔗Link Surge  
-- http://special-stage.surge.sh
+- http://hellish-mouth.surge.sh
 
 ## 💻Como Rodar o Projeto Localmente
 
