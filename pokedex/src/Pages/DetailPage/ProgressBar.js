@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ProgressBarOut, ProgressBar0 } from "./styled";
-import { colors } from "../../components/PokeTypes/PokemonTypeIcons";
 
 export const Progress = ({ bar, color }) => {
   const [style, setStyle] = useState({});
@@ -16,7 +15,7 @@ export const Progress = ({ bar, color }) => {
 
   return (
     <ProgressBarOut>
-      <ProgressBar0 style={style}>{parseInt(bar*(230/100))}</ProgressBar0>
+      <ProgressBar0 style={style}>{parseInt(bar)}</ProgressBar0>
     </ProgressBarOut>
   );
 };

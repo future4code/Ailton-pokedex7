@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { cards } from "../../components/PokeTypes/PokeTypesCards";
 import { cards2 } from "../../components/PokeTypes/PokeTypesCards";
-import { colors } from "../../components/PokeTypes/PokemonTypeIcons";
 
 export const DetailContainer = styled.div`
   display: flex;
@@ -219,8 +218,8 @@ export const ProgressBarOut = styled.div`
   }
 `;
 export const ProgressBar0 = styled.div`
-  height: 60%;
-  margin-left: 2px;
+  height: 80%;
+  margin: 2px;
   display: flex;
   justify-content: center;
   align-self: center;

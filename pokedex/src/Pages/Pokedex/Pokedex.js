@@ -3,7 +3,7 @@ import { goToDetailPage } from "../../routes/coordinator";
 import { useNavigate } from "react-router-dom";
 import Squirtle from "../../assets/img/squirtle.gif";
 import PokeClose from "../../assets/img/pokeClose.png";
-import {GlobalContext} from "../../components/Global/GlobalContext";
+import { GlobalContext } from "../../components/Global/GlobalContext";
 import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
 import { useContext, useEffect } from "react";
 import Swal from "sweetalert2";
@@ -29,7 +29,11 @@ export default function Pokedex() {
     });
     setPokedex(newList);
     localStorage.setItem("pokedex", JSON.stringify(newList));
-    Swal.fire("Oh, no!!",`${(RemovePoke.name).toUpperCase()} foi removido da sua pokedex!`, "");
+    Swal.fire(
+      "Oh, no!!",
+      `${RemovePoke.name.toUpperCase()} foi removido da sua pokedex!`,
+      ""
+    );
   };
 
   useEffect(() => {
@@ -60,7 +64,7 @@ export default function Pokedex() {
         <ButtonsContainer>
           <img
             className="pokeClose"
-            onClick={() => removeFromPokedex(item) }
+            onClick={() => removeFromPokedex(item)}
             src={PokeClose}
             alt={"Remover da Pokedex"}
           />
