@@ -20,7 +20,8 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Os Pokémons podem ser adicionados à Pokédex
   - Ao clicar na imagem do Pokémon você será direcionado à página de detalhes
   - Ao adicionar o Pokémon, o botão Pokebola Aberta muda para Pokebola Fechada, fazendo com que não seja possivel adicionar mesmo Pokémon duas vezes na Pokedex
-  - Acesso a Pokedex.
+  - Acesso a Pokedex
+  - Paginação
 - **Pokédex**
   - Ver os Pokémons adicionados
   - Remover os pokémons da pokedex
