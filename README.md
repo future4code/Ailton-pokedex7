@@ -37,7 +37,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Na página de batalhas é possivel jogar no estilo Super Trunfo 
   - Os Pokémons são sorteados e é possivel fazer a comparação de atributos
   - Mensagens na tela após cada rodada e Alerta após a finalização de 5 Rounds. Informando quem foi o vencedor
-  - Ao lado esquedo da tela tem um botão de regras/rules, onde ao clicar o usuário verá a seguinnte mensagem explicativa:
+  - Ao lado esquedo da tela tem um botão de regras/rules, onde ao clicar o usuário verá a seguinte mensagem explicativa:
   ```
   Clique no Card do seu Pokémon e escolha um Atributo.
   Se a pontuação for maior que a do seu oponente >> Você Vence!!
