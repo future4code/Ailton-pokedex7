@@ -46,7 +46,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   Loading em todas as páginas
 - Responsividade Funcional
 ## 🔗Link Surge  
-- http://hellish-mouth.surge.sh
+- http://pokedex.ailton7.surge.sh
 
 ## 💻Como Rodar o Projeto Localmente
 
@@ -92,14 +92,25 @@ Por padrão a aplicação rodará localmente na porta 3000.
 
 ## 🖥📱Imagens
 Home
-![prints (5)](https://user-images.githubusercontent.com/104591781/180666884-e0ed2a40-188a-4d87-80d6-19017fb865f0.png)
+![printspokedex (1)](https://user-images.githubusercontent.com/104591781/181138149-825eee71-bb34-47ac-a463-c376be398399.png)
+Paginação
+![printspokedex (2)](https://user-images.githubusercontent.com/104591781/181138220-a1cadc13-c76a-47a7-92a8-c90e27e08d59.png)
 Alert ao capturar um Pokémon 
-![prints (6)](https://user-images.githubusercontent.com/104591781/180666885-26ed3bf3-3260-4826-a136-0dc3fd8e270f.png)
+![printspokedex (3)](https://user-images.githubusercontent.com/104591781/181138257-db636e69-bc3a-4de0-b288-d8c4e471b4f6.png)
 Um Pokémon não pode ser adicionado à Pokedex duas vezes  
-![prints (1)](https://user-images.githubusercontent.com/104591781/180666879-ec235cc4-6393-4fc7-bc18-a73ccc9b2321.png)
+![printspokedex (4)](https://user-images.githubusercontent.com/104591781/181138284-070aaa67-6211-42d0-bde0-1493ead19302.png)
 Pokedex
 ![prints (3)](https://user-images.githubusercontent.com/104591781/180666882-a9a087ce-97f7-4261-9e05-6ccb956a8681.png)
 Pokemon sendo removido  
 ![prints (2)](https://user-images.githubusercontent.com/104591781/180666881-0df77f22-9ce3-4869-838e-ec8ba4b51229.png)
 Página de detalhes  
 ![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
+![printspokedex (6)](https://user-images.githubusercontent.com/104591781/181138408-2582814c-a4f2-4ca8-8fe5-7ed231c42283.png)
+Pagina de Batalha
+![printspokedex (8)](https://user-images.githubusercontent.com/104591781/181138444-74c185c4-b30d-441f-a977-a65dfbb3d0df.png)
+Regras
+![printspokedex (11)](https://user-images.githubusercontent.com/104591781/181138499-fc581e24-ff4c-4264-b87e-57c3a6f27bea.png)
+Escolhendo atributo
+![printspokedex (9)](https://user-images.githubusercontent.com/104591781/181138452-bfe31ae6-0dbb-4397-ae47-94af36618b0b.png)
+Após 5 Rounds
+![printspokedex (10)](https://user-images.githubusercontent.com/104591781/181138490-bdb57d0d-5f5b-4b05-b00f-74d8883537b4.png)
