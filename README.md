@@ -107,8 +107,7 @@ Pokemon sendo removido
 Página de detalhes  
 ![printspokedex (6)](https://user-images.githubusercontent.com/104591781/181138408-2582814c-a4f2-4ca8-8fe5-7ed231c42283.png)
 ![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
-Pagina de Batalha
-Regras
+Pagina de Batalha / Regras
 ![printspokedex (11)](https://user-images.githubusercontent.com/104591781/181138499-fc581e24-ff4c-4264-b87e-57c3a6f27bea.png)
 Parte frontal do card
 ![printspokedex (8)](https://user-images.githubusercontent.com/104591781/181138444-74c185c4-b30d-441f-a977-a65dfbb3d0df.png)
