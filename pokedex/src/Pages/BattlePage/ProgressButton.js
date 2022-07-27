@@ -15,7 +15,7 @@ export const ProgressButton = ({ bar, color }) => {
 
   return (
     <BarOut>
-      <ProgressBar0 style={style}>{parseInt(bar * (230 / 100))}</ProgressBar0>
+      <ProgressBar0 style={style}>{parseInt(bar)}</ProgressBar0>
     </BarOut>
   );
 };
