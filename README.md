@@ -20,7 +20,7 @@ Ela é uma API pública, bastante utilizada para aplicações focadas em aprendi
   - Os Pokémons podem ser adicionados à Pokédex
   - Ao clicar na imagem do Pokémon você será direcionado à página de detalhes
   - Ao adicionar o Pokémon, o botão Pokebola Aberta muda para Pokebola Fechada, fazendo com que não seja possivel adicionar mesmo Pokémon duas vezes na Pokedex
-  - Acesso a Pokedex
+  - Acesso à Pokedex
   - Paginação
 - **Pokédex**
   - Ver os Pokémons adicionados
@@ -105,12 +105,13 @@ Pokedex
 Pokemon sendo removido  
 ![prints (2)](https://user-images.githubusercontent.com/104591781/180666881-0df77f22-9ce3-4869-838e-ec8ba4b51229.png)
 Página de detalhes  
-![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
 ![printspokedex (6)](https://user-images.githubusercontent.com/104591781/181138408-2582814c-a4f2-4ca8-8fe5-7ed231c42283.png)
+![prints (2)](https://user-images.githubusercontent.com/104591781/180667065-a014ec5d-d9f6-41f5-8996-ad39df2d9881.png)
 Pagina de Batalha
-![printspokedex (8)](https://user-images.githubusercontent.com/104591781/181138444-74c185c4-b30d-441f-a977-a65dfbb3d0df.png)
 Regras
 ![printspokedex (11)](https://user-images.githubusercontent.com/104591781/181138499-fc581e24-ff4c-4264-b87e-57c3a6f27bea.png)
+Parte frontal do card
+![printspokedex (8)](https://user-images.githubusercontent.com/104591781/181138444-74c185c4-b30d-441f-a977-a65dfbb3d0df.png)
 Escolhendo atributo
 ![printspokedex (9)](https://user-images.githubusercontent.com/104591781/181138452-bfe31ae6-0dbb-4397-ae47-94af36618b0b.png)
 Após 5 Rounds
