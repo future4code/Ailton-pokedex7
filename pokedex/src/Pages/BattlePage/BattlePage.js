@@ -42,11 +42,9 @@ function BattlePage() {
     rounds,
     pokeUser,
     opponent,
-    userStats,
     choiceStats,
     verifyWhoWon,
     changeRound,
-    endGame,
   } = useContext(GlobalContext);
 
   return (
@@ -79,7 +77,7 @@ function BattlePage() {
             flipOnHover={false}
             flipOnClick={true}
             flipDirection="horizontal"
-            style={{ width: "320px", height: "500px" }}
+            style={{ width: "320px", height: "515px" }}
           >
             <FrontSide
               style={{

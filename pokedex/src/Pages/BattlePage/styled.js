@@ -39,7 +39,7 @@ export const Rounds = styled.div`
 export const Scores = styled.div`
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  width: 96vw;
 
   h2 {
     font-family: "Pokemon solid";
@@ -65,9 +65,6 @@ export const CardContainer = styled.div`
   align-items: center;
   padding-top: 15px;
   line-height: 20px;
-  img {
-    transition: transform 0.5s;
-  }
   span {
     font-family: Pokemon Hollow, serif;
     font-weight: 900;
