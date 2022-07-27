@@ -13,7 +13,7 @@ const GlobalState = (props) => {
     setIsLoading(true);
     const getAllPokemons = async () => {
       await axios
-        .get(`${BASE_URL}pokemon?limit=10&offset=0`)
+        .get(`${BASE_URL}pokemon?limit=900&offset=0`)
         .then((response) => {
           setIsLoading(false);
           pokemonList(response.data.results);
@@ -76,7 +76,7 @@ const GlobalState = (props) => {
     setChoiceMade(false);
     setWhoWon("");
 
-    const pokeUserId = Math.floor(Math.random() * 9) + 1;
+    const pokeUserId = Math.floor(Math.random() * 899) + 1;
     getPokeUser(pokeUserId);
     getOpponent();
     endGame();
@@ -99,7 +99,7 @@ const GlobalState = (props) => {
   };
 
   const getOpponent = () => {
-    const pokeOpponentId = Math.floor(Math.random() * 9) + 1;
+    const pokeOpponentId = Math.floor(Math.random() * 899) + 1;
 
     axios
       .get(`${BASE_URL}pokemon/${pokeOpponentId}`)
