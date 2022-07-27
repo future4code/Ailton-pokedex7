@@ -4,10 +4,10 @@ import Header from "../../components/Header/Header";
 import { BASE_URL } from "../../constants/url";
 import { useParams } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
-import { typesIcons, colors } from "../../components/PokeTypes/PokemonTypeIcons";
+import { typesIcons } from "../../components/PokeTypes/PokemonTypeIcons";
 import PokeOpen from "../../assets/img/pokeOpen.png";
 import PokeClose from "../../assets/img/pokeClose.png";
-import {GlobalContext} from "../../components/Global/GlobalContext";
+import { GlobalContext } from "../../components/Global/GlobalContext";
 import { Progress } from "./ProgressBar";
 import LoadingImg from "../../assets/img/loading.gif";
 import { AiFillHeart } from "react-icons/ai";
@@ -63,7 +63,11 @@ export default function DetailPage() {
   };
 
   const addToPokedex = (newToPokedex) => {
-    Swal.fire(`Gotcha!!<br/>${(newToPokedex.name).toUpperCase()}, eu escolho você!`,"", "success");
+    Swal.fire(
+      `Gotcha!!<br/>${newToPokedex.name.toUpperCase()}, eu escolho você!`,
+      "",
+      "success"
+    );
 
     const pokedexLocal = localStorage.getItem("pokedex");
     if (!!pokedexLocal) {
@@ -147,7 +151,13 @@ export default function DetailPage() {
                   className="pokeClose"
                   src={PokeClose}
                   alt={"Remover da Pokedex"}
-                  onClick={() => Swal.fire(`${(details?.name).toUpperCase()} já está na sua pokedex!`,"", "success")}
+                  onClick={() =>
+                    Swal.fire(
+                      `${(details?.name).toUpperCase()} já está na sua pokedex!`,
+                      "",
+                      "success"
+                    )
+                  }
                 />
               )}
               {!ListPokedex?.includes(details?.name) && (
@@ -166,39 +176,39 @@ export default function DetailPage() {
               <h2>
                 <AiFillHeart color="red" /> HP:{" "}
               </h2>
-              {<Progress color="red" bar={details?.stats[0].base_stat * (100 / 230)} />}
+              {<Progress color="red" bar={details?.stats[0].base_stat} />}
             </div>
             <div>
               <h2>
                 <GiBroadsword color="orange" /> Attack:
               </h2>
-              {<Progress color="orange" bar={details?.stats[1].base_stat * (100 / 230)} />}
+              {<Progress color="orange" bar={details?.stats[1].base_stat} />}
             </div>
             <div>
               <h2>
                 <GiSlashedShield color="blue" /> Defense:
               </h2>
-              {<Progress color="blue" bar={details?.stats[2].base_stat * (100 / 230)} />}
+              {<Progress color="blue" bar={details?.stats[2].base_stat} />}
             </div>
             <div>
               <h2>
                 <GiPointySword color="yellow" /> SP Attack:{" "}
               </h2>
-              {<Progress color="yellow" bar={details?.stats[3].base_stat * (100 / 230)} />}
+              {<Progress color="yellow" bar={details?.stats[3].base_stat} />}
             </div>
             <div>
               <h2>
                 <GiShieldBounces color="green" />
                 SP Defense:{" "}
               </h2>
-              {<Progress color="green"bar={details?.stats[4].base_stat * (100 / 230)} />}
+              {<Progress color="green" bar={details?.stats[4].base_stat} />}
             </div>
             <div>
               <h2>
                 <GiFootPlaster color="pink" />
                 Speed:
               </h2>
-              {<Progress color="pink" bar={details?.stats[5].base_stat * (100 / 230)} />}
+              {<Progress color="pink" bar={details?.stats[5].base_stat} />}
             </div>
             <h1>
               <strong>Total stats:</strong>

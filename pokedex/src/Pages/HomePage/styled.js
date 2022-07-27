@@ -22,8 +22,20 @@ export const Loading = styled.div`
     height: 331.42px;
   }
   @media screen and (max-width: 480px) {
-    img{
+    img {
       height: 250px;
     }
+  }
+`;
+export const Battle = styled.img`
+  cursor: pointer;
+  width: 80px;
+  position: fixed;
+  margin-top: -65px;
+  margin-left: 20px;
+
+  @media screen and (max-width: 660px) {
+    margin-top: 2px;
+    margin-left: 0;
   }
 `;

@@ -7,9 +7,9 @@ export const Container = styled.ul`
   justify-content: center;
   gap: 20px;
   list-style-type: none;
-    @media (max-width: 640px) {
-    }
-`
+  @media (max-width: 640px) {
+  }
+`;
 export const Item = styled.li`
   cursor: pointer;
   display: flex;

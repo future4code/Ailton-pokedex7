@@ -37,24 +37,3 @@ export const typesIcons = {
   grass: grass,
   fairy: fairy,
 };
-
-export const colors = {
-  normal: "grey",
-  bug: "#2bb826",
-  dark: "darkgrey",
-  electric:  "#ffde59",
-  fighting: "#ff1616",
-  grass: "#2bb826",
-  ghost: "#5e17eb",
-  psychic: "#ff3a67",
-  flying: "#38b6ff",
-  steel: "#c3a5ff",
-  ice: "#38b6ff",
-  poison: "#5e17eb",
-  fire:  "#ff6800",
-  dragon: "darkblue",
-  ground: "#ff1616",
-  rock: "#ff6800",
-  fairy: "#ff3a67",
-  water: "#38b6ff",
-};

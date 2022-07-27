@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BarOut, ProgressBar0 } from "./styled";
 
-export const ProgressButton = ({ bar, color, statItem, icon }) => {
+export const ProgressButton = ({ bar, color }) => {
   const [style, setStyle] = useState({});
 
   setTimeout(() => {
@@ -14,12 +14,8 @@ export const ProgressButton = ({ bar, color, statItem, icon }) => {
   }, 1000);
 
   return (
-
-<BarOut>
-        <ProgressBar0 style={style}>
-          {icon} {statItem}: {parseInt(bar * (230 / 100))}
-        </ProgressBar0>
-        </BarOut>
-
+    <BarOut>
+      <ProgressBar0 style={style}>{parseInt(bar * (230 / 100))}</ProgressBar0>
+    </BarOut>
   );
 };
