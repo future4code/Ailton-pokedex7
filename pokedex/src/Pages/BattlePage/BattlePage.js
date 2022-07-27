@@ -115,8 +115,8 @@ function BattlePage() {
                       <ProgressBarOut>
                         {
                           <ProgressButton
-                            color="pink"
-                            bar={pokeUser?.stats[0].base_stat * (100 / 230)}
+                            color="coral"
+                            bar={userStats[1]}
                           />
                         }
                       </ProgressBarOut>
@@ -148,7 +148,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color={"red"}
-                          bar={pokeUser?.stats[0].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[0].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -164,7 +164,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color={"orange"}
-                          bar={pokeUser?.stats[1].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[1].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -180,7 +180,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color="blue"
-                          bar={pokeUser?.stats[2].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[2].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -196,7 +196,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color="yellow"
-                          bar={pokeUser?.stats[3].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[3].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -213,7 +213,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color="green"
-                          bar={pokeUser?.stats[4].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[4].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -230,7 +230,7 @@ function BattlePage() {
                       {
                         <ProgressButton
                           color="pink"
-                          bar={pokeUser?.stats[4].base_stat * (100 / 230)}
+                          bar={pokeUser?.stats[4].base_stat}
                         />
                       }
                     </ProgressBarOut>
@@ -276,8 +276,8 @@ function BattlePage() {
                   <ProgressBarOut>
                     {
                       <ProgressButton
-                        color="pink"
-                        bar={choiceStats[1] * (100 / 230)}
+                        color="coral"
+                        bar={choiceStats[1]}
                       />
                     }
                   </ProgressBarOut>

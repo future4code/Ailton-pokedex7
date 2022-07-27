@@ -144,7 +144,7 @@ export const StatsSpace = styled.div`
 export const ProgressBarOut = styled.div`
   display: flex;
   width: 240px;
-  border-radius: 5px;
+  border-radius: 6px;
   height: 30px;
   line-height: 100%;
   background-color: #eee;
@@ -155,14 +155,17 @@ export const ProgressBarOut = styled.div`
 `;
 export const BarOut = styled.button`
   width: 100%;
+  border-radius: 6px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
   position: relative;
+  border: none;
+  margin: 3px;
+  overflow: hidden;
 `;
 export const ProgressBar0 = styled.div`
-  height: 80%;
-  margin: 2px;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,7 +173,6 @@ export const ProgressBar0 = styled.div`
   transition: 5s ease 0.1s;
   border-radius: 5px;
   font-size: 18px;
-  overflow: visible;
   font-family: "pokemon solid";
 `;
 export const Type = styled.div`

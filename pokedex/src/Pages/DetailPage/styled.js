@@ -209,7 +209,6 @@ export const ProgressBarOut = styled.div`
   height: 25px;
   line-height: 100%;
   background-color: #eee;
-
   font-family: "comic sans ms";
   margin: 7px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
