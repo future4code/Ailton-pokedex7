@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "323e547d-39ec-46f6-ab50-679631c351db",
+		"name": "POKEDEX",
+		"description": "Esta API gera dados simplificados de Pokemons, através do consumo de API chamada PokeAPI.\n\nINSTRUÇÕES GERAIS\n\nA seguir seguem informações gerais para uso dos endpoints:\n\nBASE_URL: [https://labe-pokedex.herokuapp.com/pokemon](https://labe-pokedex.herokuapp.com/pokemon)\n\nDescrevendo:  \nBASE_URL -> Parte do endereço url que se repete na API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21551971"
+	},
+	"item": [
+		{
+			"name": "Get PokeList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://labe-pokedex.herokuapp.com/pokemon/list?limit=1154&offset=30",
+					"protocol": "https",
+					"host": [
+						"labe-pokedex",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pokemon",
+						"list"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1154"
+						},
+						{
+							"key": "offset",
+							"value": "30"
+						}
+					]
+				},
+				"description": "Este endpoint nos retorna dados de identificação de pokemons (id e name) na forma de lista de pokemons.\n\nObservação 1: Este endpoint opera através de duas queries (opcionais) combinadas: `limit` e `offset`\n\n`limit` -> Utilizada para definir a quantidade de pokemons a serem exibidos. É esperado uma string de complemento a url de tipo `number`.  \n`offset`\\-> Define o primeiro pokemon da lista do banco de dados a ser exibido (primeiro pokemon é definido pelo valor `0`). É esperado uma string de complemento a url de tipo `number`.\n\nObservação 2: Caso nenhum valor de `limit` e/ou `offset` sejam definidos (ou qualquer valor de tipo diferente à `number`), são assumidos os valores de `20` para `limit` e `0` para `offset`."
+			},
+			"response": []
+		},
+		{
+			"name": "Get PokeDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://labe-pokedex.herokuapp.com/pokemon/:pokeNameOrId",
+					"protocol": "https",
+					"host": [
+						"labe-pokedex",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"pokemon",
+						":pokeNameOrId"
+					],
+					"variable": [
+						{
+							"key": "pokeNameOrId",
+							"value": "eevee"
+						}
+					]
+				},
+				"description": "Este endpoint nos retorna detalhes de um pokemon específico, através da busca pelo seu `id` ou `name`.\n\nAs informações fornecidas na busca são:\n\n`id` -> id do pokemon.  \n`name` -> nome do pokemon.  \n`images` -> imagens frontal e de costas do pokemon, no formato url.  \n`status` -> atributos de um pokemon, com seus respectivos `status_name` e `value` .  \n`types` -> tipos do pokemon.  \n`abilites` -> poderes e habilidades do pokemon, listados da mais importante (primeira da lista) para a menos importante (última da lista).\n\nObservação 1: O `id` do primeiro pokemon tem valor `1`.\n\nObservação 2: A busca por `name` deve ser exata (sensitive case)."
+			},
+			"response": []
+		},
+		{
+			"name": "Get PokeChain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://pokeapi.co/api/v2/evolution-chain/:id",
+					"protocol": "https",
+					"host": [
+						"pokeapi",
+						"co"
+					],
+					"path": [
+						"api",
+						"v2",
+						"evolution-chain",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Este endpoint nos retorna detalhes de um pokemon específico, através da busca pelo seu `id` ou `name`.\n\nAs informações fornecidas na busca são:\n\n`id` -> id do pokemon.  \n`name` -> nome do pokemon.  \n`images` -> imagens frontal e de costas do pokemon, no formato url.  \n`status` -> atributos de um pokemon, com seus respectivos `status_name` e `value` .  \n`types` -> tipos do pokemon.  \n`abilites` -> poderes e habilidades do pokemon, listados da mais importante (primeira da lista) para a menos importante (última da lista).\n\nObservação 1: O `id` do primeiro pokemon tem valor `1`.\n\nObservação 2: A busca por `name` deve ser exata (sensitive case)."
+			},
+			"response": []
+		}
+	]
+}
